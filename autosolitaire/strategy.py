@@ -11,20 +11,19 @@ The only contract is that choose_move(game_state, legal_moves) must return
 a Move from the legal_moves list (or an integer index into it).
 """
 
-import random
-
 from prepare import (
     GameState,
     Move,
     MoveType,
     apply_move,
     evaluate_strategy,
+    foundation_accepts,
     get_legal_moves,
 )
 
-ROLLOUTS = 6
-ROLLOUT_DEPTH = 24
-CANDIDATES = 3
+PREVIEW_DEPTH = 12
+PREVIEW_CANDIDATES = 3
+WASTE_LOOKAHEAD = 5
 
 
 def _is_safe_to_foundation(gs: GameState, card) -> bool:
@@ -117,63 +116,113 @@ def _baseline_move(gs: GameState, legal_moves: list[Move]) -> Move:
     return min(legal_moves, key=lambda move: _move_priority(gs, move))
 
 
+def _king_ready(gs: GameState) -> bool:
+    return bool(gs.waste and gs.waste[-1].rank == 12) or any(
+        pile.face_up and pile.face_up[0].rank == 12 for pile in gs.tableau
+    )
+
+
+def _tableau_target_count(gs: GameState, card) -> int:
+    count = 0
+    for pile in gs.tableau:
+        if pile.is_empty():
+            if card.rank == 12:
+                count += 1
+            continue
+        top = pile.top_card()
+        if top and top.color != card.color and top.rank == card.rank + 1:
+            count += 1
+    return count
+
+
+def _waste_future_score(gs: GameState) -> float:
+    trial = gs.clone()
+    score = 0.0
+    for step in range(WASTE_LOOKAHEAD):
+        if not trial.waste:
+            if trial.stock:
+                apply_move(trial, Move(MoveType.DRAW))
+            elif trial.waste:
+                apply_move(trial, Move(MoveType.RESET_STOCK))
+            else:
+                break
+        if not trial.waste:
+            break
+        card = trial.waste[-1]
+        weight = 1.0 / (step + 1)
+        if foundation_accepts(trial, card):
+            score += 10.0 * weight
+        tableau_targets = _tableau_target_count(trial, card)
+        if tableau_targets:
+            score += (6.0 + 2.0 * tableau_targets) * weight
+        if trial.stock:
+            apply_move(trial, Move(MoveType.DRAW))
+        elif trial.waste:
+            apply_move(trial, Move(MoveType.RESET_STOCK))
+        else:
+            break
+    return score
+
+
 def _state_score(gs: GameState) -> float:
     foundation = gs.total_foundation_cards()
     facedown = sum(len(pile.face_down) for pile in gs.tableau)
     empty_cols = sum(1 for pile in gs.tableau if pile.is_empty())
-    score = foundation * 22.0 - facedown * 9.0 - gs.stock_passes * 7.0
+    score = foundation * 24.0 - facedown * 11.0 - gs.stock_passes * 8.0
+    if gs.waste:
+        waste_card = gs.waste[-1]
+        if foundation_accepts(gs, waste_card):
+            score += 10.0
+        tableau_targets = _tableau_target_count(gs, waste_card)
+        score += 5.0 * tableau_targets
+    score += _waste_future_score(gs)
     if empty_cols:
-        king_ready = bool(gs.waste and gs.waste[-1].rank == 12) or any(
-            pile.face_up and pile.face_up[0].rank == 12 for pile in gs.tableau
-        )
-        score += empty_cols * (4.0 if king_ready else -6.0)
+        score += empty_cols * (4.0 if _king_ready(gs) else -7.0)
     return score
 
 
-def _rollout_move(gs: GameState, legal_moves: list[Move], rng: random.Random) -> Move:
-    ordered = sorted(legal_moves, key=lambda move: _move_priority(gs, move))
-    best_bucket = _move_priority(gs, ordered[0])[0]
-    shortlist = [move for move in ordered if _move_priority(gs, move)[0] <= best_bucket + 1]
-    shortlist = shortlist[: min(3, len(shortlist))]
-    return shortlist[0] if len(shortlist) == 1 else shortlist[rng.randrange(len(shortlist))]
-
-
-def _rollout_score(gs: GameState, seed: int) -> float:
+def _preview_score(gs: GameState) -> float:
     trial = gs.clone()
-    rng = random.Random(seed)
-    for _ in range(ROLLOUT_DEPTH):
+    seen: set[tuple] = set()
+    for _ in range(PREVIEW_DEPTH):
         if trial.is_won():
             return 1_000_000.0 + _state_score(trial)
+        key = trial.state_key()
+        if key in seen:
+            break
+        seen.add(key)
         legal = get_legal_moves(trial)
         if not legal:
             break
-        move = _rollout_move(trial, legal, rng)
-        apply_move(trial, move)
+        apply_move(trial, _baseline_move(trial, legal))
     return _state_score(trial)
 
 
 def choose_move(gs: GameState, legal_moves: list[Move]) -> Move:
     """
     Keep the baseline on obviously good moves. When the choice is ambiguous,
-    compare a few candidate moves with short stochastic rollouts.
+    compare a few candidate moves by previewing the greedy continuation.
     """
     ordered = sorted(legal_moves, key=lambda move: _move_priority(gs, move))
     best = ordered[0]
     if _move_priority(gs, best)[0] <= 5:
         return best
 
-    state_seed = hash(gs.state_key())
+    best_bucket = _move_priority(gs, best)[0]
+    shortlist = [
+        move for move in ordered if _move_priority(gs, move)[0] <= best_bucket + 2
+    ][:PREVIEW_CANDIDATES]
+    if len(shortlist) == 1:
+        return shortlist[0]
+
     best_move = best
     best_score = float("-inf")
-    for idx, move in enumerate(ordered[:CANDIDATES]):
-        total = 0.0
-        for rollout in range(ROLLOUTS):
-            child = gs.clone()
-            apply_move(child, move)
-            total += _rollout_score(child, state_seed + idx * 101 + rollout)
-        average = total / ROLLOUTS
-        if average > best_score:
-            best_score = average
+    for move in shortlist:
+        child = gs.clone()
+        apply_move(child, move)
+        score = _preview_score(child)
+        if score > best_score:
+            best_score = score
             best_move = move
     return best_move
 

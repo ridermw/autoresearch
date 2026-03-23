@@ -1,5 +1,5 @@
 """
-Klondike Solitaire strategy — the agent modifies this file.
+Klondike Solitaire strategy - the agent modifies this file.
 Usage: python strategy.py
 
 The goal: maximize win_rate over 10,000 fixed deals of 3-card-draw Klondike.
@@ -21,8 +21,10 @@ from prepare import (
     get_legal_moves,
 )
 
-PREVIEW_DEPTH = 14
-PREVIEW_CANDIDATES = 5
+PREVIEW_DEPTH = 6
+PREVIEW_CANDIDATES = 3
+BEAM_WIDTH = 1
+BEAM_EXPANSION = 2
 WASTE_LOOKAHEAD = 5
 
 
@@ -181,21 +183,56 @@ def _state_score(gs: GameState) -> float:
     return score
 
 
+def _beam_moves(gs: GameState, legal_moves: list[Move]) -> list[Move]:
+    ordered = sorted(legal_moves, key=lambda move: _move_priority(gs, move))
+    best_bucket = _move_priority(gs, ordered[0])[0]
+    shortlist = [
+        move for move in ordered if _move_priority(gs, move)[0] <= best_bucket + 1
+    ][:BEAM_EXPANSION]
+    for move_type in (MoveType.DRAW, MoveType.RESET_STOCK):
+        special = next((move for move in ordered if move.type == move_type), None)
+        if not special or special in shortlist:
+            continue
+        if len(shortlist) < BEAM_EXPANSION:
+            shortlist.append(special)
+        else:
+            shortlist[-1] = special
+    return shortlist
+
+
 def _preview_score(gs: GameState) -> float:
-    trial = gs.clone()
-    seen: set[tuple] = set()
-    for _ in range(PREVIEW_DEPTH):
-        if trial.is_won():
-            return 1_000_000.0 + _state_score(trial)
-        key = trial.state_key()
-        if key in seen:
+    start = gs.clone()
+    beam = [start]
+    seen = {start.state_key()}
+    best_score = _state_score(start)
+
+    for depth in range(PREVIEW_DEPTH):
+        next_states: list[tuple[float, GameState]] = []
+        for state in beam:
+            if state.is_won():
+                return 1_000_000.0 + _state_score(state)
+            legal = get_legal_moves(state)
+            if not legal:
+                score = _state_score(state)
+                best_score = max(best_score, score)
+                continue
+            for move in _beam_moves(state, legal):
+                child = state.clone()
+                apply_move(child, move)
+                key = child.state_key()
+                if key in seen:
+                    continue
+                seen.add(key)
+                score = _state_score(child) - depth * 0.5
+                next_states.append((score, child))
+                if score > best_score:
+                    best_score = score
+        if not next_states:
             break
-        seen.add(key)
-        legal = get_legal_moves(trial)
-        if not legal:
-            break
-        apply_move(trial, _baseline_move(trial, legal))
-    return _state_score(trial)
+        next_states.sort(key=lambda item: item[0], reverse=True)
+        beam = [state for _, state in next_states[:BEAM_WIDTH]]
+
+    return best_score
 
 
 def choose_move(gs: GameState, legal_moves: list[Move]) -> Move:
@@ -240,7 +277,7 @@ if __name__ == "__main__":
     import time
 
     t0 = time.time()
-    print("Klondike 3-Card Draw — Strategy Evaluation")
+    print("Klondike 3-Card Draw - Strategy Evaluation")
     print("=" * 50)
     print()
 

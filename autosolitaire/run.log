@@ -1,24 +1,24 @@
 Klondike 3-Card Draw - Strategy Evaluation
 ==================================================
 
-  [1,000/10,000] win_rate=0.1400 avg_foundation=13.2
-  [2,000/10,000] win_rate=0.1280 avg_foundation=12.6
-  [3,000/10,000] win_rate=0.1243 avg_foundation=12.5
-  [4,000/10,000] win_rate=0.1280 avg_foundation=12.6
-  [5,000/10,000] win_rate=0.1284 avg_foundation=12.7
-  [6,000/10,000] win_rate=0.1288 avg_foundation=12.7
-  [7,000/10,000] win_rate=0.1306 avg_foundation=12.8
-  [8,000/10,000] win_rate=0.1301 avg_foundation=12.7
-  [9,000/10,000] win_rate=0.1306 avg_foundation=12.8
-  [10,000/10,000] win_rate=0.1323 avg_foundation=12.8
+  [1,000/10,000] win_rate=0.1500 avg_foundation=13.7
+  [2,000/10,000] win_rate=0.1340 avg_foundation=12.9
+  [3,000/10,000] win_rate=0.1317 avg_foundation=12.8
+  [4,000/10,000] win_rate=0.1360 avg_foundation=13.0
+  [5,000/10,000] win_rate=0.1364 avg_foundation=13.0
+  [6,000/10,000] win_rate=0.1380 avg_foundation=13.1
+  [7,000/10,000] win_rate=0.1397 avg_foundation=13.2
+  [8,000/10,000] win_rate=0.1389 avg_foundation=13.1
+  [9,000/10,000] win_rate=0.1391 avg_foundation=13.2
+  [10,000/10,000] win_rate=0.1405 avg_foundation=13.2
 
 ---
-win_rate:         0.132300
-wins:             1323
+win_rate:         0.140500
+wins:             1405
 total_games:      10000
-avg_foundation:   12.8
-avg_moves:        67.8
-total_seconds:    376.4
+avg_foundation:   13.2
+avg_moves:        68.4
+total_seconds:    409.4
 
 Strategy file: Q:\git\autoresearch\autosolitaire\strategy.py
-Wall clock:    376.4s
+Wall clock:    409.4s

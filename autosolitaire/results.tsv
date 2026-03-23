@@ -29,3 +29,4 @@ a80f6eb	0.129600	13.1	discard	late-game aggressive foundation (foundation >= 20)
 848e3d2	0.143200	13.3	discard	waste-to-tableau alignment bonus (neutral)
 4044de2	0.019700	7.7	discard	time-budgeted search (28ms too tight, most search skipped)
 5480840	0.143900	13.4	keep	increase PREVIEW_CANDIDATES from 6 to 7
+e4a02a6	0.143900	13.4	discard	PREVIEW_CANDIDATES=8 (no benefit over 7)

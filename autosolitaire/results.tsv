@@ -32,3 +32,4 @@ a80f6eb	0.129600	13.1	discard	late-game aggressive foundation (foundation >= 20)
 e4a02a6	0.143900	13.4	discard	PREVIEW_CANDIDATES=8 (no benefit over 7)
 181830c	0.149900	13.6	keep	replace beam search with greedy rollout 20 steps (simpler and better)
 2f20818	0.152900	13.7	KEEP	GREEDY_DEPTH=30 (was 20). +30 wins, +0.1 avg_foundation. 363s.
+e682eff	0.153900	13.7	KEEP	GREEDY_DEPTH=40 (was 30). +10 wins. 380s - pushing time budget.

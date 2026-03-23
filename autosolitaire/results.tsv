@@ -80,3 +80,4 @@ b40572f	0.159200	14.0	discard	Exp 81: adaptive facedown weight (28-foundation)*0
 9699977	0.086200	10.3	discard	Exp 84: 2-ply root in rollout — catastrophic -740 wins, score selection worse than heuristic
 658cff5	-	-	crash	Exp 85: full shortlist (bucket>=6) — TIMEOUT >540s, too many candidates per decision
 3eda922	0.159400	14.1	discard	Exp 86: foundation accessibility penalty — -8 wins, very slow 474s
+f56c762	0.133100	12.9	discard	Exp 87: reverse reveal priority (shorter columns first) — -271 wins, original direction correct

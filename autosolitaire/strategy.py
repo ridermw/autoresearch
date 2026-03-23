@@ -212,6 +212,14 @@ def choose_move(gs: GameState, legal_moves: list[Move]) -> Move:
     shortlist = [
         move for move in ordered if _move_priority(gs, move)[0] <= best_bucket + 2
     ][:PREVIEW_CANDIDATES]
+    for move_type in (MoveType.DRAW, MoveType.RESET_STOCK):
+        special = next((move for move in ordered if move.type == move_type), None)
+        if not special or special in shortlist:
+            continue
+        if len(shortlist) < PREVIEW_CANDIDATES:
+            shortlist.append(special)
+        else:
+            shortlist[-1] = special
     if len(shortlist) == 1:
         return shortlist[0]
 

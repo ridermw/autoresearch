@@ -70,3 +70,4 @@ d2ff9a6	0.159800	14.1	DISCARD	Foundation balance penalty 2.0->1.5. -1 win.
 e5b60be	0.159100	14.0	DISCARD	Facedown weight 14->13. -8 wins.
 a952798	0.160200	14.1	KEEP	Foundation weight 24->22. +3 wins. 395s.
 4575116	0.159200	14.0	discard	Exp 76: uniform empty column bonus +5 (remove king distinction) — -10 wins
+bffcdd6	0.160200	14.1	discard	Exp 77: hybrid rollout (full 25 steps + fast 55 steps depth=80) — neutral, same win_rate

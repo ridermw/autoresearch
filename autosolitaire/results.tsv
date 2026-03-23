@@ -24,3 +24,4 @@ ea7371e	0.142900	13.3	discard	increase foundation weight from 24.0 to 30.0
 d255b81	0.136200	13.1	discard	PREVIEW_DEPTH=9 CANDIDATES=5 (depth not worth fewer candidates)
 7b6c235	0.142600	13.3	discard	widen beam bucket range from +1 to +2
 a80f6eb	0.129600	13.1	discard	late-game aggressive foundation (foundation >= 20)
+1ac0073	0.143300	13.3	discard	adaptive preview depth +4 endgame (within noise, not worth complexity)

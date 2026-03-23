@@ -40,3 +40,4 @@ e7b9cd4	0.154200	13.7	KEEP	PREVIEW_CANDIDATES=8 (was 7). +1 win, marginal. 385s.
 b33a0a4	0.154800	13.8	KEEP	Facedown penalty 11->14. +6 wins, +0.1 avg_foundation. 379s.
 90206cc	0.154500	13.7	DISCARD	Facedown penalty 14->17. Too aggressive, -3 wins. 377s.
 2ed962c	0.154500	13.8	DISCARD	Foundation weight 24->28. -3 wins. 377s.
+687e9bc	TIMEOUT	TIMEOUT	DISCARD	Lower auto-play threshold to bucket<=3. Way too many rollout calls.

@@ -35,3 +35,4 @@ e4a02a6	0.143900	13.4	discard	PREVIEW_CANDIDATES=8 (no benefit over 7)
 e682eff	0.153900	13.7	KEEP	GREEDY_DEPTH=40 (was 30). +10 wins. 380s - pushing time budget.
 796b9ef	0.150200	13.6	DISCARD	Replace state_key cycle detection with foundation stall check (STALL_LIMIT=12). Slower AND worse. 543s.
 c803fd3	0.154100	13.7	KEEP	Reduce depth penalty from 0.1 to 0.05 in greedy rollout. +2 wins. 382s.
+e7b9cd4	0.154200	13.7	KEEP	PREVIEW_CANDIDATES=8 (was 7). +1 win, marginal. 385s.

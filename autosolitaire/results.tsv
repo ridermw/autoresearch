@@ -50,3 +50,4 @@ daff7da	0.159100	14.0	KEEP	WASTE_LOOKAHEAD=2, GREEDY_DEPTH=50. +3 wins, faster (
 10f1c51	0.159200	14.0	KEEP	GREEDY_DEPTH=55 (was 50). +1 win, marginal. 395s.
 70ca737	0.159600	14.1	KEEP	Foundation balance penalty (max-min)*2. +4 wins, +0.1 avg_foundation. 397s.
 a9fbe9c	0.159500	14.1	DISCARD	Foundation balance (max-min)*3. Slightly worse. 399s.
+e35a65a	0.158200	14.0	DISCARD	King-ready empty col bonus +4->+8. -14 wins. 395s.

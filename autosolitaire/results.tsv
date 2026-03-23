@@ -4,3 +4,4 @@ daf992c	0.000000	2.6	discard	one-ply state scoring heuristic
 0eea212	0.000000	0.0	discard	monte carlo rollouts timed out (>5m)
 df38890	0.028300	7.3	keep	greedy preview lookahead with waste scoring
 392a55b	0.029800	7.4	keep	deeper greedy preview lookahead
+92415fd	0.080600	10.2	keep	always compare draw and reset options in greedy preview

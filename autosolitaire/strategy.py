@@ -179,7 +179,7 @@ def _state_score(gs: GameState) -> float:
         score += 5.0 * tableau_targets
     score += _waste_future_score(gs)
     if empty_cols:
-        score += empty_cols * (4.0 if _king_ready(gs) else 0.0)
+        score += empty_cols * (4.0 if _king_ready(gs) else 3.0)
     return score
 
 

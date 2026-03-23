@@ -11,3 +11,4 @@ dc9aa05	0.118300	12.2	discard	tune scoring weights (foundation=28 facedown=13)
 756977f	0.132300	12.8	keep	increase PREVIEW_CANDIDATES from 3 to 4
 2435468	0.140500	13.2	keep	increase PREVIEW_CANDIDATES from 4 to 5
 79273c7	0.140500	13.2	keep	cache _move_priority calls (same quality, 11s faster)
+e64c3ee	0.141500	13.2	keep	PREVIEW_CANDIDATES=6 WASTE_LOOKAHEAD=3 (trade waste depth for candidates)

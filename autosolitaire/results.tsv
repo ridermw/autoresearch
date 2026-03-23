@@ -7,3 +7,4 @@ commit	win_rate	avg_foundation	status	description
 1c3ae9e	0.116900	12.2	keep	increase BEAM_EXPANSION from 2 to 3
 df28101	0.098700	11.3	discard	BEAM_EXPANSION=4 (too wide, search too diffuse)
 3dbee15	0.119100	12.3	keep	increase PREVIEW_DEPTH from 6 to 7
+dc9aa05	0.118300	12.2	discard	tune scoring weights (foundation=28 facedown=13)

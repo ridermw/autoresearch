@@ -3,3 +3,4 @@ commit	win_rate	avg_foundation	status	description
 1edd0ef	0.110800	11.8	discard	add tableau run-length bonus to state scoring
 4849653	0.112600	11.8	discard	wider beam (width=2 depth=4) trades depth for width
 2cc6a8d	0.000000	0.0	crash	lower preview threshold to bucket<=3 (timed out >5m)
+9d70345	0.084000	10.1	discard	deeper preview (depth=10) with fast inner scoring (no waste score)

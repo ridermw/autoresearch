@@ -224,7 +224,7 @@ def _preview_score(gs: GameState) -> float:
                 if key in seen:
                     continue
                 seen.add(key)
-                score = _state_score(child) - depth * 0.5
+                score = _state_score(child) - depth * 0.2
                 next_states.append((score, child))
                 if score > best_score:
                     best_score = score

@@ -22,10 +22,10 @@ from prepare import (
 )
 
 PREVIEW_DEPTH = 7
-PREVIEW_CANDIDATES = 5
+PREVIEW_CANDIDATES = 6
 BEAM_WIDTH = 1
 BEAM_EXPANSION = 3
-WASTE_LOOKAHEAD = 5
+WASTE_LOOKAHEAD = 3
 
 
 def _is_safe_to_foundation(gs: GameState, card) -> bool:

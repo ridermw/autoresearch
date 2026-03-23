@@ -1,2 +1,3 @@
 commit	win_rate	avg_foundation	status	description
 3f50992	0.113400	12.0	keep	baseline (beam-preview with visited-state pruning from mar22)
+1edd0ef	0.110800	11.8	discard	add tableau run-length bonus to state scoring

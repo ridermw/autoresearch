@@ -1,12 +1,1 @@
 commit	win_rate	avg_foundation	status	description
-446b12e	0.001400	4.1	keep	baseline (greedy heuristic)
-daf992c	0.000000	2.6	discard	one-ply state scoring heuristic
-0eea212	0.000000	0.0	discard	monte carlo rollouts timed out (>5m)
-df38890	0.028300	7.3	keep	greedy preview lookahead with waste scoring
-392a55b	0.029800	7.4	keep	deeper greedy preview lookahead
-92415fd	0.080600	10.2	keep	always compare draw and reset options in greedy preview
-2fb4d37	0.078900	10.1	discard	shorter preview depth
-f37deff	0.090600	10.7	keep	increase preview candidates from 3 to 4
-9086bf7	0.098000	11.0	keep	increase preview depth to 14 and candidates to 5
-5242eed	0.113400	12.0	keep	beam preview with visited-state pruning
-bd89983	0.106800	11.8	discard	narrower beam expansion for faster search

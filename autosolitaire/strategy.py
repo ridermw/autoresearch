@@ -183,7 +183,7 @@ def _state_score(gs: GameState) -> float:
     return score
 
 
-GREEDY_DEPTH = 50
+GREEDY_DEPTH = 55
 
 
 def _preview_score(gs: GameState) -> float:

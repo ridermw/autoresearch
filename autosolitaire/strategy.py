@@ -204,7 +204,7 @@ def _preview_score(gs: GameState) -> float:
         if key in seen:
             break
         seen.add(key)
-        score = _state_score(state) - step * 0.1
+        score = _state_score(state) - step * 0.05
         if score > best_score:
             best_score = score
 

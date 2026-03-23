@@ -76,3 +76,4 @@ f7e9c4a	0.160100	14.1	discard	Exp 79: foundation weight 23 — -1 win, neutral
 41110d0	0.159400	14.0	discard	Exp 80: facedown weight 15 — -8 wins
 b40572f	0.159200	14.0	discard	Exp 81: adaptive facedown weight (28-foundation)*0.2 — -10 wins
 0b21189	0.154700	13.9	discard	Exp 82: auto-play bucket<=6 + depth=70 — -55 wins despite faster (312s)
+09205bf	0.159100	14.0	discard	Exp 83: WASTE_LOOKAHEAD=3 — -11 wins, slower 411s

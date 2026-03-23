@@ -53,3 +53,4 @@ a9fbe9c	0.159500	14.1	DISCARD	Foundation balance (max-min)*3. Slightly worse. 39
 e35a65a	0.158200	14.0	DISCARD	King-ready empty col bonus +4->+8. -14 wins. 395s.
 26dc527	0.159700	14.1	KEEP	PREVIEW_CANDIDATES=10 (was 8). +1 win, marginal. 402s.
 a14f072	TIMEOUT	TIMEOUT	DISCARD	Widen shortlist best_bucket+2 -> +3. Too many candidates, timeout.
+07ac8f5	0.117200	11.8	DISCARD	Return final rollout score instead of peak. Catastrophic drop. Peak is essential.

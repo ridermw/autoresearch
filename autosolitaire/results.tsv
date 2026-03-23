@@ -26,3 +26,4 @@ d255b81	0.136200	13.1	discard	PREVIEW_DEPTH=9 CANDIDATES=5 (depth not worth fewe
 a80f6eb	0.129600	13.1	discard	late-game aggressive foundation (foundation >= 20)
 1ac0073	0.143300	13.3	discard	adaptive preview depth +4 endgame (within noise, not worth complexity)
 5c97d20	0.139900	13.2	discard	quadratic facedown penalty + revealed pile bonus
+848e3d2	0.143200	13.3	discard	waste-to-tableau alignment bonus (neutral)

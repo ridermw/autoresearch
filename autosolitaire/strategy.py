@@ -21,7 +21,7 @@ from prepare import (
     get_legal_moves,
 )
 
-PREVIEW_DEPTH = 6
+PREVIEW_DEPTH = 7
 PREVIEW_CANDIDATES = 3
 BEAM_WIDTH = 1
 BEAM_EXPANSION = 3

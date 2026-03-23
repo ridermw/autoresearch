@@ -11,41 +11,20 @@ The only contract is that choose_move(game_state, legal_moves) must return
 a Move from the legal_moves list (or an integer index into it).
 """
 
+import random
+
 from prepare import (
     GameState,
     Move,
     MoveType,
+    apply_move,
     evaluate_strategy,
-    foundation_accepts,
+    get_legal_moves,
 )
 
-# ---------------------------------------------------------------------------
-# Strategy: choose_move(game_state, legal_moves) -> Move
-# ---------------------------------------------------------------------------
-#
-# Simple priority baseline:
-#
-#   0. Flip face-down tableau cards (mandatory)
-#   1. Play Aces/Twos to foundation (always correct)
-#   2. Any foundation move that reveals a face-down card
-#   3. Safe foundation moves (opposite-color predecessors already placed)
-#   4. Tableau-to-tableau that reveals face-down cards
-#   5. Waste to tableau (shifts waste access pattern — vital for 3-draw)
-#   6. Foundation moves for low cards (rank 3-5)
-#   7. Draw from stock
-#   8. Tableau reorg: King to empty column if it reveals cards
-#   9. Foundation moves for high cards
-#  10. Tableau reorg that doesn't reveal
-#  11. Reset stock
-#
-# Design notes:
-# - Foundation play is very aggressive. In 3-card draw, removing cards from
-#   the game almost always helps because it thins the stock/waste cycle.
-# - Waste-to-tableau is ranked high because every card removed from waste
-#   shifts which cards are accessible in subsequent draw cycles.
-# - Non-revealing tableau reorg is ranked BELOW draw, to avoid cycles where
-#   the strategy just shuffles visible cards instead of drawing new ones.
-# ---------------------------------------------------------------------------
+ROLLOUTS = 6
+ROLLOUT_DEPTH = 24
+CANDIDATES = 3
 
 
 def _is_safe_to_foundation(gs: GameState, card) -> bool:
@@ -56,24 +35,21 @@ def _is_safe_to_foundation(gs: GameState, card) -> bool:
     if card.rank <= 1:
         return True
     needed_rank = card.rank - 1
-    if card.color == 1:  # red — need black suits
-        opposite_suits = [0, 3]
-    else:  # black — need red suits
-        opposite_suits = [1, 2]
-    for suit in opposite_suits:
-        if gs.foundation_top_rank(suit) < needed_rank:
-            return False
-    return True
+    if card.color == 1:
+        opposite_suits = (0, 3)
+    else:
+        opposite_suits = (1, 2)
+    return all(gs.foundation_top_rank(suit) >= needed_rank for suit in opposite_suits)
 
 
 def _reveals_facedown(gs: GameState, move: Move) -> bool:
     """Does this move reveal a face-down card underneath?"""
     if move.type == MoveType.TABLEAU_TO_TABLEAU:
         pile = gs.tableau[move.from_col]
-        return move.count == len(pile.face_up) and len(pile.face_down) > 0
+        return move.count == len(pile.face_up) and bool(pile.face_down)
     if move.type == MoveType.TABLEAU_TO_FOUNDATION:
         pile = gs.tableau[move.from_col]
-        return len(pile.face_up) == 1 and len(pile.face_down) > 0
+        return len(pile.face_up) == 1 and bool(pile.face_down)
     return False
 
 
@@ -90,11 +66,9 @@ def _move_priority(gs: GameState, move: Move) -> tuple:
     """Lower tuple = higher priority."""
     t = move.type
 
-    # 0: Flip face-down cards (mandatory)
     if t == MoveType.FLIP_TABLEAU:
         return (0,)
 
-    # Foundation moves — classify by safety and card rank
     if t in (MoveType.WASTE_TO_FOUNDATION, MoveType.TABLEAU_TO_FOUNDATION):
         card = _get_card_for_move(gs, move)
         reveals = (
@@ -103,84 +77,106 @@ def _move_priority(gs: GameState, move: Move) -> tuple:
             else False
         )
 
-        # 1: Aces and Twos — always play immediately
         if card.rank <= 1:
             return (1, 0 if reveals else 1)
-
-        # 2: Foundation move that reveals a face-down card — almost always worth it
         if reveals:
             return (2, -card.rank)
-
-        # 3: Safe foundation (opposite predecessors already placed)
         if _is_safe_to_foundation(gs, card):
             return (3, -card.rank)
-
-        # 6: Low cards (rank 3-5) even if not safe — unlikely to be needed
         if card.rank <= 5:
             return (6, -card.rank)
-
-        # 9: High cards — risky, might strand tableau sequences
         return (9, -card.rank)
 
-    # 4: Tableau-to-tableau that reveals face-down cards
     if t == MoveType.TABLEAU_TO_TABLEAU and _reveals_facedown(gs, move):
-        facedown_count = len(gs.tableau[move.from_col].face_down)
-        return (4, -facedown_count)
+        return (4, -len(gs.tableau[move.from_col].face_down))
 
-    # 5: Waste to tableau — every card pulled from waste changes draw alignment
     if t == MoveType.WASTE_TO_TABLEAU:
         pile = gs.tableau[move.to_col]
-        facedown = len(pile.face_down)
-        pile_size = len(pile.face_up)
-        return (5, -facedown, -pile_size)
+        return (5, -len(pile.face_down), -len(pile.face_up))
 
-    # 7: Draw from stock
     if t == MoveType.DRAW:
         return (7,)
 
-    # 8-10: Tableau reorg that doesn't reveal
     if t == MoveType.TABLEAU_TO_TABLEAU:
         src = gs.tableau[move.from_col]
         dst = gs.tableau[move.to_col]
         bottom_card = src.face_up[-move.count]
-
-        # 8: King to empty column with face-down cards underneath — good
         if dst.is_empty() and bottom_card.rank == 12 and src.face_down:
             return (8, -len(src.face_down))
-
-        # Moving to empty column without a King, or King with nothing to reveal
         if dst.is_empty():
             return (10, 5)
+        return (10, -len(dst.face_down), -len(dst.face_up), -move.count)
 
-        # Regular reorg — prefer building longer runs on piles with face-down
-        dst_facedown = len(dst.face_down)
-        dst_size = len(dst.face_up)
-        return (10, -dst_facedown, -dst_size, -move.count)
-
-    # 11: Reset stock
     if t == MoveType.RESET_STOCK:
         return (11,)
 
     return (99,)
 
 
+def _baseline_move(gs: GameState, legal_moves: list[Move]) -> Move:
+    return min(legal_moves, key=lambda move: _move_priority(gs, move))
+
+
+def _state_score(gs: GameState) -> float:
+    foundation = gs.total_foundation_cards()
+    facedown = sum(len(pile.face_down) for pile in gs.tableau)
+    empty_cols = sum(1 for pile in gs.tableau if pile.is_empty())
+    score = foundation * 22.0 - facedown * 9.0 - gs.stock_passes * 7.0
+    if empty_cols:
+        king_ready = bool(gs.waste and gs.waste[-1].rank == 12) or any(
+            pile.face_up and pile.face_up[0].rank == 12 for pile in gs.tableau
+        )
+        score += empty_cols * (4.0 if king_ready else -6.0)
+    return score
+
+
+def _rollout_move(gs: GameState, legal_moves: list[Move], rng: random.Random) -> Move:
+    ordered = sorted(legal_moves, key=lambda move: _move_priority(gs, move))
+    best_bucket = _move_priority(gs, ordered[0])[0]
+    shortlist = [move for move in ordered if _move_priority(gs, move)[0] <= best_bucket + 1]
+    shortlist = shortlist[: min(3, len(shortlist))]
+    return shortlist[0] if len(shortlist) == 1 else shortlist[rng.randrange(len(shortlist))]
+
+
+def _rollout_score(gs: GameState, seed: int) -> float:
+    trial = gs.clone()
+    rng = random.Random(seed)
+    for _ in range(ROLLOUT_DEPTH):
+        if trial.is_won():
+            return 1_000_000.0 + _state_score(trial)
+        legal = get_legal_moves(trial)
+        if not legal:
+            break
+        move = _rollout_move(trial, legal, rng)
+        apply_move(trial, move)
+    return _state_score(trial)
+
+
 def choose_move(gs: GameState, legal_moves: list[Move]) -> Move:
     """
-    Choose the best move from the list of legal moves.
-
-    Args:
-        gs: current game state (treat as read-only)
-        legal_moves: list of legal Move objects (non-empty)
-
-    Returns:
-        A Move from legal_moves
+    Keep the baseline on obviously good moves. When the choice is ambiguous,
+    compare a few candidate moves with short stochastic rollouts.
     """
-    return min(legal_moves, key=lambda m: _move_priority(gs, m))
+    ordered = sorted(legal_moves, key=lambda move: _move_priority(gs, move))
+    best = ordered[0]
+    if _move_priority(gs, best)[0] <= 5:
+        return best
 
+    state_seed = hash(gs.state_key())
+    best_move = best
+    best_score = float("-inf")
+    for idx, move in enumerate(ordered[:CANDIDATES]):
+        total = 0.0
+        for rollout in range(ROLLOUTS):
+            child = gs.clone()
+            apply_move(child, move)
+            total += _rollout_score(child, state_seed + idx * 101 + rollout)
+        average = total / ROLLOUTS
+        if average > best_score:
+            best_score = average
+            best_move = move
+    return best_move
 
-# ---------------------------------------------------------------------------
-# Main — run evaluation
-# ---------------------------------------------------------------------------
 
 if __name__ == "__main__":
     import sys
@@ -191,7 +187,7 @@ if __name__ == "__main__":
     print("=" * 50)
     print()
 
-    stats = evaluate_strategy(choose_move)
+    evaluate_strategy(choose_move)
 
     print()
     print(f"Strategy file: {__file__}")

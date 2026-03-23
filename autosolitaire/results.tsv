@@ -1,0 +1,3 @@
+commit	win_rate	avg_foundation	status	description
+446b12e	0.001400	4.1	keep	baseline (greedy heuristic)
+daf992c	0.000000	2.6	discard	one-ply state scoring heuristic

@@ -18,7 +18,7 @@ wins:             1405
 total_games:      10000
 avg_foundation:   13.2
 avg_moves:        68.4
-total_seconds:    409.4
+total_seconds:    398.1
 
 Strategy file: Q:\git\autoresearch\autosolitaire\strategy.py
-Wall clock:    409.4s
+Wall clock:    398.1s

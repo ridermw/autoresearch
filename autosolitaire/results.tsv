@@ -66,3 +66,4 @@ d8f82dd	0.126100	12.3	DISCARD	Dual rollout (greedy + 2nd-best-first), depth=28. 
 53b4bfa	0.158300	14.0	DISCARD	Relax safe-to-foundation by 1 rank. -16 wins but faster (342s).
 fc3854d	0.159600	14.1	DISCARD	Waste foundation-accepts bonus 10->15. -3 wins.
 d2ff9a6	0.159800	14.1	DISCARD	Foundation balance penalty 2.0->1.5. -1 win.
+33b80fe	0.159700	14.1	DISCARD	Facedown weight 14->15. -2 wins.

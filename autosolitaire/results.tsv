@@ -62,3 +62,4 @@ d8f82dd	0.126100	12.3	DISCARD	Dual rollout (greedy + 2nd-best-first), depth=28. 
 2e0ad53	0.159100	14.0	DISCARD	Stagnation detection (threshold=30). -8 wins, 422s.
 6e13bb9	0.158000	14.0	DISCARD	Stock pass penalty 6->4. -19 wins. Too permissive.
 5c536c2	0.159800	14.1	DISCARD	CANDIDATES=8 DEPTH=70. Neutral trade. -1 win.
+7fa9855	0.153700	13.9	DISCARD	Aggressive foundation plays in rollout. Way too aggressive, -62 wins.

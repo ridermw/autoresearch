@@ -60,3 +60,4 @@ d530ef7	0.159700	14.1	DISCARD	Depth penalty 0.05->0.02. Neutral. 401s.
 d8f82dd	0.126100	12.3	DISCARD	Dual rollout (greedy + 2nd-best-first), depth=28. Way worse and 600s.
 1d052e0	0.158800	14.0	DISCARD	Adaptive scoring (early/late weights). -11 wins. 400s.
 2e0ad53	0.159100	14.0	DISCARD	Stagnation detection (threshold=30). -8 wins, 422s.
+6e13bb9	0.158000	14.0	DISCARD	Stock pass penalty 6->4. -19 wins. Too permissive.

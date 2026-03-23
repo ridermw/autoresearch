@@ -48,3 +48,4 @@ b33a0a4	0.154800	13.8	KEEP	Facedown penalty 11->14. +6 wins, +0.1 avg_foundation
 daff7da	0.159100	14.0	KEEP	WASTE_LOOKAHEAD=2, GREEDY_DEPTH=50. +3 wins, faster (386s vs 397s).
 3f7bc64	0.157100	14.0	DISCARD	WASTE_LOOKAHEAD=1, GREEDY_DEPTH=60. Too little waste info. -20 wins. 379s.
 10f1c51	0.159200	14.0	KEEP	GREEDY_DEPTH=55 (was 50). +1 win, marginal. 395s.
+70ca737	0.159600	14.1	KEEP	Foundation balance penalty (max-min)*2. +4 wins, +0.1 avg_foundation. 397s.

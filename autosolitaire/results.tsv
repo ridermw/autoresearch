@@ -56,3 +56,4 @@ a14f072	TIMEOUT	TIMEOUT	DISCARD	Widen shortlist best_bucket+2 -> +3. Too many ca
 07ac8f5	0.117200	11.8	DISCARD	Return final rollout score instead of peak. Catastrophic drop. Peak is essential.
 d530ef7	0.159700	14.1	DISCARD	Depth penalty 0.05->0.02. Neutral. 401s.
 0eb9eef	0.143500	13.4	DISCARD	Foundation gain*3 bonus in rollout. Much worse AND slower (501s).
+233fa1a	0.159900	14.1	KEEP	Stock pass penalty 8->6. +2 wins. 401s.

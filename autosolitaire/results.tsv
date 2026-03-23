@@ -78,3 +78,4 @@ b40572f	0.159200	14.0	discard	Exp 81: adaptive facedown weight (28-foundation)*0
 0b21189	0.154700	13.9	discard	Exp 82: auto-play bucket<=6 + depth=70 — -55 wins despite faster (312s)
 09205bf	0.159100	14.0	discard	Exp 83: WASTE_LOOKAHEAD=3 — -11 wins, slower 411s
 9699977	0.086200	10.3	discard	Exp 84: 2-ply root in rollout — catastrophic -740 wins, score selection worse than heuristic
+658cff5	-	-	crash	Exp 85: full shortlist (bucket>=6) — TIMEOUT >540s, too many candidates per decision

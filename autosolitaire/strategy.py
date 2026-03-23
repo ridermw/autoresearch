@@ -21,8 +21,8 @@ from prepare import (
     get_legal_moves,
 )
 
-PREVIEW_DEPTH = 13
-PREVIEW_CANDIDATES = 4
+PREVIEW_DEPTH = 14
+PREVIEW_CANDIDATES = 5
 WASTE_LOOKAHEAD = 5
 
 

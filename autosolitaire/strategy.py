@@ -183,55 +183,30 @@ def _state_score(gs: GameState) -> float:
     return score
 
 
-def _beam_moves(gs: GameState, legal_moves: list[Move]) -> list[Move]:
-    priorities = [(move, _move_priority(gs, move)) for move in legal_moves]
-    priorities.sort(key=lambda x: x[1])
-    best_bucket = priorities[0][1][0]
-    shortlist = [
-        move for move, pri in priorities if pri[0] <= best_bucket + 1
-    ][:BEAM_EXPANSION]
-    for move_type in (MoveType.DRAW, MoveType.RESET_STOCK):
-        special = next((move for move, _ in priorities if move.type == move_type), None)
-        if not special or special in shortlist:
-            continue
-        if len(shortlist) < BEAM_EXPANSION:
-            shortlist.append(special)
-        else:
-            shortlist[-1] = special
-    return shortlist
+GREEDY_DEPTH = 20
 
 
 def _preview_score(gs: GameState) -> float:
-    start = gs.clone()
-    beam = [start]
-    seen = {start.state_key()}
-    best_score = _state_score(start)
+    """Pure greedy rollout: play forward 20 steps using heuristic, track best score."""
+    state = gs.clone()
+    seen = {state.state_key()}
+    best_score = _state_score(state)
 
-    for depth in range(PREVIEW_DEPTH):
-        next_states: list[tuple[float, GameState]] = []
-        for state in beam:
-            if state.is_won():
-                return 1_000_000.0 + _state_score(state)
-            legal = get_legal_moves(state)
-            if not legal:
-                score = _state_score(state)
-                best_score = max(best_score, score)
-                continue
-            for move in _beam_moves(state, legal):
-                child = state.clone()
-                apply_move(child, move)
-                key = child.state_key()
-                if key in seen:
-                    continue
-                seen.add(key)
-                score = _state_score(child) - depth * 0.2
-                next_states.append((score, child))
-                if score > best_score:
-                    best_score = score
-        if not next_states:
+    for step in range(GREEDY_DEPTH):
+        if state.is_won():
+            return 1_000_000.0 + _state_score(state)
+        legal = get_legal_moves(state)
+        if not legal:
             break
-        next_states.sort(key=lambda item: item[0], reverse=True)
-        beam = [state for _, state in next_states[:BEAM_WIDTH]]
+        move = _baseline_move(state, legal)
+        apply_move(state, move)
+        key = state.state_key()
+        if key in seen:
+            break
+        seen.add(key)
+        score = _state_score(state) - step * 0.1
+        if score > best_score:
+            best_score = score
 
     return best_score
 

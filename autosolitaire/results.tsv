@@ -37,3 +37,4 @@ e682eff	0.153900	13.7	KEEP	GREEDY_DEPTH=40 (was 30). +10 wins. 380s - pushing ti
 c803fd3	0.154100	13.7	KEEP	Reduce depth penalty from 0.1 to 0.05 in greedy rollout. +2 wins. 382s.
 e7b9cd4	0.154200	13.7	KEEP	PREVIEW_CANDIDATES=8 (was 7). +1 win, marginal. 385s.
 73bcbe0	0.123700	12.0	DISCARD	Skip waste_future_score during rollout (fast scoring). Way worse despite 269s runtime.
+b33a0a4	0.154800	13.8	KEEP	Facedown penalty 11->14. +6 wins, +0.1 avg_foundation. 379s.

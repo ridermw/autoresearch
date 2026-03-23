@@ -380,6 +380,8 @@ def play_game(seed: int, choose_move_fn, debug: bool = False) -> dict:
                 break  # invalid choice = stuck
             move = legal[choice]
         elif isinstance(choice, Move):
+            if choice not in legal:
+                break  # illegal move = stuck
             move = choice
         else:
             break

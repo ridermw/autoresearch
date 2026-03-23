@@ -37,7 +37,7 @@ The evaluation plays **10,000 fixed deals** (seeds 1,000,000 through 1,009,999) 
 
 **Simplicity criterion**: All else being equal, simpler is better. A small win_rate improvement that adds ugly complexity is questionable. Conversely, removing something and getting equal or better results is a great outcome — that's a simplification win. When evaluating whether to keep a change, weigh the complexity cost against the improvement magnitude. A 0.001 win_rate improvement that adds 50 lines of hacky code? Probably not worth it. A 0.01 win_rate improvement from a clean 10-line change? Definitely keep. An improvement of ~0 but much simpler code? Keep.
 
-**The first run**: Your very first run should always be to establish the baseline — run the strategy as-is.
+**The first run**: Your very first run should always be to establish the baseline — run the current `strategy.py` as-is. Note that `strategy.py` may already contain an evolved strategy from a previous experiment run. Record whatever it achieves as the starting point for this run.
 
 ## Output format
 
@@ -59,7 +59,7 @@ You can extract the key metrics from the log file:
 grep "^win_rate:\|^avg_foundation:" run.log
 ```
 
-**Important**: 3-card draw Klondike is extremely hard for greedy heuristics. The baseline wins ~0.14% of games (14/10,000) with avg_foundation ~4.1. This is normal — in 3-card draw you can only access every 3rd waste card, so most cards are inaccessible without search. Use `avg_foundation` as your primary progress signal early on (it's more granular than win_rate). Your first milestone is getting avg_foundation above 8. From there, focus on getting win_rate above 1% — that likely requires adding search, backtracking, or Monte Carlo rollouts to the strategy.
+**Important**: 3-card draw Klondike is extremely hard for greedy heuristics. A naive greedy heuristic wins ~0.14% of games (14/10,000) with avg_foundation ~4.1. The current `strategy.py` already includes a beam-preview search that achieves ~11% win rate. Use `avg_foundation` as a progress signal when win_rate differences are small (it's more granular). To push beyond the current level, consider deeper search, Monte Carlo rollouts, or hybrid approaches — see the strategy ideas section below.
 
 ## Logging results
 

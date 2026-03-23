@@ -72,3 +72,4 @@ a952798	0.160200	14.1	KEEP	Foundation weight 24->22. +3 wins. 395s.
 4575116	0.159200	14.0	discard	Exp 76: uniform empty column bonus +5 (remove king distinction) — -10 wins
 bffcdd6	0.160200	14.1	discard	Exp 77: hybrid rollout (full 25 steps + fast 55 steps depth=80) — neutral, same win_rate
 feef5d9	0.097300	10.8	discard	Exp 78: rollout survival bonus +0.1/step — catastrophic -629 wins, overwhelms peak signal
+f7e9c4a	0.160100	14.1	discard	Exp 79: foundation weight 23 — -1 win, neutral

@@ -184,13 +184,14 @@ def _state_score(gs: GameState) -> float:
 
 
 def _beam_moves(gs: GameState, legal_moves: list[Move]) -> list[Move]:
-    ordered = sorted(legal_moves, key=lambda move: _move_priority(gs, move))
-    best_bucket = _move_priority(gs, ordered[0])[0]
+    priorities = [(move, _move_priority(gs, move)) for move in legal_moves]
+    priorities.sort(key=lambda x: x[1])
+    best_bucket = priorities[0][1][0]
     shortlist = [
-        move for move in ordered if _move_priority(gs, move)[0] <= best_bucket + 1
+        move for move, pri in priorities if pri[0] <= best_bucket + 1
     ][:BEAM_EXPANSION]
     for move_type in (MoveType.DRAW, MoveType.RESET_STOCK):
-        special = next((move for move in ordered if move.type == move_type), None)
+        special = next((move for move, _ in priorities if move.type == move_type), None)
         if not special or special in shortlist:
             continue
         if len(shortlist) < BEAM_EXPANSION:
@@ -240,17 +241,18 @@ def choose_move(gs: GameState, legal_moves: list[Move]) -> Move:
     Keep the baseline on obviously good moves. When the choice is ambiguous,
     compare a few candidate moves by previewing the greedy continuation.
     """
-    ordered = sorted(legal_moves, key=lambda move: _move_priority(gs, move))
-    best = ordered[0]
-    if _move_priority(gs, best)[0] <= 5:
+    priorities = [(move, _move_priority(gs, move)) for move in legal_moves]
+    priorities.sort(key=lambda x: x[1])
+    best, best_pri = priorities[0]
+    if best_pri[0] <= 5:
         return best
 
-    best_bucket = _move_priority(gs, best)[0]
+    best_bucket = best_pri[0]
     shortlist = [
-        move for move in ordered if _move_priority(gs, move)[0] <= best_bucket + 2
+        move for move, pri in priorities if pri[0] <= best_bucket + 2
     ][:PREVIEW_CANDIDATES]
     for move_type in (MoveType.DRAW, MoveType.RESET_STOCK):
-        special = next((move for move in ordered if move.type == move_type), None)
+        special = next((move for move, _ in priorities if move.type == move_type), None)
         if not special or special in shortlist:
             continue
         if len(shortlist) < PREVIEW_CANDIDATES:

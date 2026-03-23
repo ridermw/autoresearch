@@ -84,3 +84,4 @@ f56c762	0.133100	12.9	discard	Exp 87: reverse reveal priority (shorter columns f
 60d1317	0.160200	14.1	discard	Exp 88: depth penalty 0.03 — neutral, same win_rate
 66d9d47	0.157200	14.0	discard	Exp 89: two-phase evaluation (quick20+deep80) — -30 wins, slower 455s
 1ebd804	0.160200	14.1	discard	Exp 90: king-to-empty reveal as auto-play (bucket 4) — neutral, same win_rate
+4e52757	0.153500	13.8	discard	Exp 91: CANDIDATES=5 DEPTH=100 — -67 wins, breadth more important than depth

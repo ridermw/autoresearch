@@ -19,3 +19,4 @@ e97f3c7	0.044900	7.6	discard	remove depth penalty entirely (too optimistic about
 71217e2	0.141700	13.3	discard	PREVIEW_DEPTH=8 (slower and slightly worse)
 bb70025	0.143200	13.3	discard	foundation cascade bonus (neutral, adds complexity)
 5f96373	0.000000	0.0	crash	preview bucket 4-5 vs draw/reset (timed out >5m)
+944a76d	0.000000	0.0	crash	BEAM_WIDTH=2 PREVIEW_DEPTH=5 (timed out >5m)

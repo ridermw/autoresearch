@@ -16,3 +16,4 @@ e64c3ee	0.141500	13.2	keep	PREVIEW_CANDIDATES=6 WASTE_LOOKAHEAD=3 (trade waste d
 e97f3c7	0.044900	7.6	discard	remove depth penalty entirely (too optimistic about deep states)
 212503c	0.142300	13.3	discard	reduce stock_passes penalty from 8.0 to 5.0
 061428b	0.101800	11.1	discard	increase stock_passes penalty to 12.0 (too harsh)
+71217e2	0.141700	13.3	discard	PREVIEW_DEPTH=8 (slower and slightly worse)

@@ -5,3 +5,4 @@ commit	win_rate	avg_foundation	status	description
 2cc6a8d	0.000000	0.0	crash	lower preview threshold to bucket<=3 (timed out >5m)
 9d70345	0.084000	10.1	discard	deeper preview (depth=10) with fast inner scoring (no waste score)
 1c3ae9e	0.116900	12.2	keep	increase BEAM_EXPANSION from 2 to 3
+df28101	0.098700	11.3	discard	BEAM_EXPANSION=4 (too wide, search too diffuse)

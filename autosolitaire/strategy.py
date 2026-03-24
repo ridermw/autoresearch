@@ -33,7 +33,7 @@ def _is_safe_to_foundation(gs: GameState, card) -> bool:
     A card is 'safe' to move to foundation if both cards of the opposite
     color with rank one less are already on their foundations.
     """
-    if card.rank <= 1:
+    if card.rank <= 4:
         return True
     needed_rank = card.rank - 1
     if card.color == 1:
@@ -84,7 +84,7 @@ def _move_priority(gs: GameState, move: Move) -> tuple:
             return (2, -card.rank)
         if _is_safe_to_foundation(gs, card):
             return (3, -card.rank)
-        if card.rank <= 5:
+        if card.rank <= 8:
             return (6, -card.rank)
         return (9, -card.rank)
 

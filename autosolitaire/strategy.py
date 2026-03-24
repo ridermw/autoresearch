@@ -176,7 +176,7 @@ def _state_score(gs: GameState) -> float:
         if foundation_accepts(gs, waste_card):
             score += 10.0
         tableau_targets = _tableau_target_count(gs, waste_card)
-        score += 5.0 * tableau_targets
+        score += 6.0 * tableau_targets
     score += _waste_future_score(gs)
     if empty_cols:
         score += empty_cols * (4.0 if _king_ready(gs) else 3.0)

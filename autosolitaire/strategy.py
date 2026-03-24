@@ -25,7 +25,7 @@ PREVIEW_DEPTH = 7
 PREVIEW_CANDIDATES = 10
 BEAM_WIDTH = 1
 BEAM_EXPANSION = 3
-WASTE_LOOKAHEAD = 4
+WASTE_LOOKAHEAD = 2
 
 
 def _is_safe_to_foundation(gs: GameState, card) -> bool:
@@ -186,7 +186,7 @@ def _state_score(gs: GameState) -> float:
     return score
 
 
-GREEDY_DEPTH = 50
+GREEDY_DEPTH = 55
 
 
 def _preview_score(gs: GameState) -> float:

@@ -90,3 +90,4 @@ f56c762	0.133100	12.9	discard	Exp 87: reverse reveal priority (shorter columns f
 5ca2030	0.158300	14.0	discard	Exp 94: fast waste + depth=80 — same as 93, extra depth unused (rollouts cycle first)
 27f5c40	0.157200	14.0	discard	Exp 95: conditional waste-to-tableau rollout — -30 wins, slower 443s
 c2ec003	0.160100	14.1	discard	Exp 96: late-game foundation boost (moves>200) — -1 win, neutral
+1525a56	0.160300	14.1	keep	Exp 97: waste-to-tableau tiebreaker prefer shorter face_up — +1 win

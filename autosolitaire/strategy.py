@@ -93,7 +93,7 @@ def _move_priority(gs: GameState, move: Move) -> tuple:
 
     if t == MoveType.WASTE_TO_TABLEAU:
         pile = gs.tableau[move.to_col]
-        return (5, -len(pile.face_down), -len(pile.face_up))
+        return (5, -len(pile.face_down), len(pile.face_up))
 
     if t == MoveType.DRAW:
         return (7,)

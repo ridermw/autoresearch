@@ -98,3 +98,4 @@ d2a9306	0.160300	14.1	discard	Exp 101: GREEDY_DEPTH 55->60 - neutral, same 1603 
 933ec03	0.159800	14.1	discard	Exp 102: foundation weight 22->21 - 1598 wins, same avg_foundation, slower 405.5s
 824dc67	0.160300	14.1	discard	Exp 103: GREEDY_DEPTH 55->54 - same wins, same avg_foundation, 125.2s slower
 1cc54d1	0.159600	14.1	discard	Exp 104: empty column bonus with king ready 4->3 - -7 wins, same avg_foundation
+7f4da17	0.159800	14.1	discard	Exp 105: waste future tableau base bonus 6->7 - -5 wins, same avg_foundation

@@ -110,3 +110,4 @@ d2a9306	0.160300	14.1	discard	Exp 101: GREEDY_DEPTH 55->60 - neutral, same 1603 
 3e9e960	0.159600	14.1	discard	Exp 114: waste tableau target bonus 5->6 - -7 wins, same avg_foundation
 77b2c61	0.160000	14.1	discard	Exp 115: waste immediate foundation bonus 10->8; waste future foundation bonus 10->16 - -3 wins, same avg_foundation
 fbbe898	0.140200	13.4	discard	Exp 116: safe foundation low-rank cutoff 1->4; foundation priority low-rank cutoff 5->8 - -201 wins, -0.7 avg_foundation
+fc542e6	0.159700	14.1	discard	Exp 117: empty column bonus without king ready 3->1; empty column bonus with king ready 4->6 - -6 wins, same avg_foundation

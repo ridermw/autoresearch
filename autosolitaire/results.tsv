@@ -95,3 +95,4 @@ c2ec003	0.160100	14.1	discard	Exp 96: late-game foundation boost (moves>200) —
 56d1a05	0.159400	14.0	discard	Exp 99: stock_passes penalty 5 — -9 wins
 666b1d6	0.158200	14.0	discard	Exp 100: waste_future_score *1.5 — -21 wins, over-weighting waste hurts
 d2a9306	0.160300	14.1	discard	Exp 101: GREEDY_DEPTH 55->60 - neutral, same 1603 wins, slower 405.4s
+933ec03	0.159800	14.1	discard	Exp 102: foundation weight 22->21 - 1598 wins, same avg_foundation, slower 405.5s

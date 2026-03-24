@@ -174,7 +174,7 @@ def _state_score(gs: GameState) -> float:
     if gs.waste:
         waste_card = gs.waste[-1]
         if foundation_accepts(gs, waste_card):
-            score += 10.0
+            score += 9.0
         tableau_targets = _tableau_target_count(gs, waste_card)
         score += 5.0 * tableau_targets
     score += _waste_future_score(gs)

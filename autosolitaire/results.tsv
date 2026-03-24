@@ -104,3 +104,4 @@ d2a9306	0.160300	14.1	discard	Exp 101: GREEDY_DEPTH 55->60 - neutral, same 1603 
 8673cc4	0.159700	14.1	discard	Exp 108: empty column bonus without king ready 3->6; empty column bonus with king ready 4->5 - -6 wins, same avg_foundation
 76d7f01	0.160300	14.1	discard	Exp 109: king-to-empty priority bucket 8->6 - same wins, same avg_foundation, 35.4s slower
 4537ce0	0.159700	14.1	discard	Exp 110: GREEDY_DEPTH 55->50; WASTE_LOOKAHEAD 2->4 - -6 wins, same avg_foundation
+1dd3028	0.160300	14.1	discard	Exp 111: GREEDY_DEPTH 55->59 - same wins, same avg_foundation, 37.6s slower

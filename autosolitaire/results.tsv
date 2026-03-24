@@ -106,3 +106,4 @@ d2a9306	0.160300	14.1	discard	Exp 101: GREEDY_DEPTH 55->60 - neutral, same 1603 
 4537ce0	0.159700	14.1	discard	Exp 110: GREEDY_DEPTH 55->50; WASTE_LOOKAHEAD 2->4 - -6 wins, same avg_foundation
 1dd3028	0.160300	14.1	discard	Exp 111: GREEDY_DEPTH 55->59 - same wins, same avg_foundation, 37.6s slower
 980a6e3	0.159800	14.1	discard	Exp 112: waste immediate foundation bonus 10->16; waste future foundation bonus 10->8 - -5 wins, same avg_foundation
+7bee458	0.160200	14.1	discard	Exp 113: GREEDY_DEPTH 55->49 - -1 wins, same avg_foundation

@@ -115,3 +115,4 @@ fa27ebf	0.159800	14.1	discard	Exp 118: foundation weight 22->27; foundation imba
 b927cf3	0.160200	14.1	discard	Exp 119: waste immediate foundation bonus 10->9 - -1 wins, same avg_foundation
 aac2f9f	0.159900	14.1	discard	Exp 120: waste future foundation bonus 10->6 - -4 wins, same avg_foundation
 01f7bc0	0.160300	14.1	discard	Exp 121: depth penalty 0.05->0.06; GREEDY_DEPTH 55->61 - same wins, same avg_foundation, 58.3s slower
+754f1c2	0.158600	14.0	discard	Exp 122: waste tableau target bonus 5->6; waste future tableau base bonus 6->8 - -17 wins, -0.1 avg_foundation

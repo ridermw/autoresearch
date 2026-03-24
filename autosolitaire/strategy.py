@@ -103,7 +103,7 @@ def _move_priority(gs: GameState, move: Move) -> tuple:
         dst = gs.tableau[move.to_col]
         bottom_card = src.face_up[-move.count]
         if dst.is_empty() and bottom_card.rank == 12 and src.face_down:
-            return (8, -len(src.face_down))
+            return (6, -len(src.face_down))
         if dst.is_empty():
             return (10, 5)
         return (10, -len(dst.face_down), -len(dst.face_up), -move.count)

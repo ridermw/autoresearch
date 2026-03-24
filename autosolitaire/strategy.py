@@ -170,7 +170,7 @@ def _state_score(gs: GameState) -> float:
     foundation = gs.total_foundation_cards()
     facedown = sum(len(pile.face_down) for pile in gs.tableau)
     empty_cols = sum(1 for pile in gs.tableau if pile.is_empty())
-    score = foundation * 27.0 - facedown * 14.0 - gs.stock_passes * 6.0
+    score = foundation * 22.0 - facedown * 14.0 - gs.stock_passes * 6.0
     if gs.waste:
         waste_card = gs.waste[-1]
         if foundation_accepts(gs, waste_card):
@@ -182,7 +182,7 @@ def _state_score(gs: GameState) -> float:
         score += empty_cols * (4.0 if _king_ready(gs) else 3.0)
     # Penalize uneven foundation distribution
     f_lens = [len(f) for f in gs.foundations]
-    score -= (max(f_lens) - min(f_lens)) * 0.0
+    score -= (max(f_lens) - min(f_lens)) * 2.0
     return score
 
 

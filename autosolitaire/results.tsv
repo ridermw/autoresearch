@@ -114,3 +114,4 @@ fc542e6	0.159700	14.1	discard	Exp 117: empty column bonus without king ready 3->
 fa27ebf	0.159800	14.1	discard	Exp 118: foundation weight 22->27; foundation imbalance penalty 2->0 - -5 wins, same avg_foundation
 b927cf3	0.160200	14.1	discard	Exp 119: waste immediate foundation bonus 10->9 - -1 wins, same avg_foundation
 aac2f9f	0.159900	14.1	discard	Exp 120: waste future foundation bonus 10->6 - -4 wins, same avg_foundation
+01f7bc0	0.160300	14.1	discard	Exp 121: depth penalty 0.05->0.06; GREEDY_DEPTH 55->61 - same wins, same avg_foundation, 58.3s slower

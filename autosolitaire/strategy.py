@@ -222,7 +222,7 @@ def choose_move(gs: GameState, legal_moves: list[Move]) -> Move:
     priorities = [(move, _move_priority(gs, move)) for move in legal_moves]
     priorities.sort(key=lambda x: x[1])
     best, best_pri = priorities[0]
-    if best_pri[0] <= 4:
+    if best_pri[0] <= 3:
         return best
 
     best_bucket = best_pri[0]

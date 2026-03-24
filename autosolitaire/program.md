@@ -11,6 +11,7 @@ To set up a new experiment, work with the user to:
 3. **Read the in-scope files**: The project is small. Read these files for full context:
    - `prepare.py` — game engine, move generation, evaluation harness. Do not modify.
    - `strategy.py` — the file you modify. Contains `choose_move(gs, legal_moves) -> Move`.
+   - `results.tsv` — if it exists, read it to see what experiments have already been tried (parameter values, outcomes). Avoid re-running experiments that already failed unless you have a genuinely new angle.
 4. **Verify the engine works**: Run `python prepare.py --num-games 100` to confirm it runs without errors.
 5. **Initialize results.tsv**: Create `results.tsv` with just the header row. The baseline will be recorded after the first run.
 6. **Confirm and go**: Confirm setup looks good.
@@ -75,7 +76,7 @@ commit	win_rate	avg_foundation	status	description
 2. win_rate achieved (e.g. 0.082300) — use 0.000000 for crashes
 3. avg_foundation cards (e.g. 18.4) — use 0.0 for crashes
 4. status: `keep`, `discard`, or `crash`
-5. short text description of what this experiment tried
+5. short text description — include **specific parameter values** changed (e.g. `facedown_penalty 14->17` not just `increase facedown penalty`) and the win delta (e.g. `+3 wins` or `-9 wins`)
 
 **Deciding what to keep**: A change is an improvement if avg_foundation increases meaningfully (even if win_rate stays at 0). Once you start getting wins, win_rate becomes the primary metric. When both metrics are available, prefer changes that improve win_rate; use avg_foundation as a tiebreaker.
 
@@ -99,7 +100,7 @@ LOOP FOREVER:
 
 1. Look at the git state: the current branch/commit we're on
 2. Edit `strategy.py` with an experimental idea by directly hacking the code.
-3. git commit
+3. git commit — use a **verbose commit message**: first line is the experiment title with specific values (e.g. `Experiment: facedown_penalty 14 -> 17`), then a blank line, then 1-2 lines explaining the code change and hypothesis. This is the primary record of what was tried, since discarded experiments are reset away.
 4. Run the experiment: `python strategy.py > run.log 2>&1` (redirect everything — do NOT use tee or let output flood your context)
 5. Read out the results: `grep "^win_rate:\|^avg_foundation:" run.log`
 6. If the grep output is empty, the run crashed. Run `tail -n 50 run.log` to read the Python stack trace and attempt a fix. If you can't get things to work after more than a few attempts, give up.

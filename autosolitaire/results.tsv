@@ -88,3 +88,4 @@ f56c762	0.133100	12.9	discard	Exp 87: reverse reveal priority (shorter columns f
 9b28bc8	0.159500	14.0	discard	Exp 92: CANDIDATES=15 DEPTH=35 — -7 wins, breadth gain doesn't offset depth loss
 6d6f3f5	0.158300	14.0	discard	Exp 93: fast waste scoring (direct stock read) — -19 wins, 50s faster but less accurate
 5ca2030	0.158300	14.0	discard	Exp 94: fast waste + depth=80 — same as 93, extra depth unused (rollouts cycle first)
+27f5c40	0.157200	14.0	discard	Exp 95: conditional waste-to-tableau rollout — -30 wins, slower 443s

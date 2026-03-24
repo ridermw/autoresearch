@@ -156,7 +156,7 @@ def _waste_future_score(gs: GameState) -> float:
             score += 10.0 * weight
         tableau_targets = _tableau_target_count(trial, card)
         if tableau_targets:
-            score += (6.0 + 2.0 * tableau_targets) * weight
+            score += (7.0 + 2.0 * tableau_targets) * weight
         if trial.stock:
             apply_move(trial, Move(MoveType.DRAW))
         elif trial.waste:

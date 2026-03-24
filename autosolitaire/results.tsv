@@ -93,3 +93,4 @@ c2ec003	0.160100	14.1	discard	Exp 96: late-game foundation boost (moves>200) —
 1525a56	0.160300	14.1	keep	Exp 97: waste-to-tableau tiebreaker prefer shorter face_up — +1 win
 2b75394	0.159400	14.0	discard	Exp 98: non-revealing tableau shorter face_up tiebreaker — -9 wins
 56d1a05	0.159400	14.0	discard	Exp 99: stock_passes penalty 5 — -9 wins
+666b1d6	0.158200	14.0	discard	Exp 100: waste_future_score *1.5 — -21 wins, over-weighting waste hurts

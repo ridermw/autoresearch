@@ -153,7 +153,7 @@ def _waste_future_score(gs: GameState) -> float:
         card = trial.waste[-1]
         weight = 1.0 / (step + 1)
         if foundation_accepts(trial, card):
-            score += 10.0 * weight
+            score += 16.0 * weight
         tableau_targets = _tableau_target_count(trial, card)
         if tableau_targets:
             score += (6.0 + 2.0 * tableau_targets) * weight

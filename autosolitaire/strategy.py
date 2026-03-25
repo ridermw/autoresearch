@@ -186,7 +186,7 @@ def _state_score(gs: GameState) -> float:
     return score
 
 
-GREEDY_DEPTH = 55
+GREEDY_DEPTH = 65
 
 
 def _preview_score(gs: GameState) -> float:
@@ -207,7 +207,7 @@ def _preview_score(gs: GameState) -> float:
         if key in seen:
             break
         seen.add(key)
-        score = _state_score(state) - step * 0.05
+        score = _state_score(state) - step * 0.07
         if score > best_score:
             best_score = score
 
@@ -222,7 +222,7 @@ def choose_move(gs: GameState, legal_moves: list[Move]) -> Move:
     priorities = [(move, _move_priority(gs, move)) for move in legal_moves]
     priorities.sort(key=lambda x: x[1])
     best, best_pri = priorities[0]
-    if best_pri[0] <= 5:
+    if best_pri[0] <= 4:
         return best
 
     best_bucket = best_pri[0]

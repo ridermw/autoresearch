@@ -100,3 +100,4 @@ d2a9306	0.160300	14.1	discard	Exp 101: GREEDY_DEPTH 55->60 - neutral, same 1603 
 cfc9f91	0.000000	0.0	crash	Exp 223: auto-play threshold <= 5 -> <= 4 — TIMEOUT >540s
 8ebf2c0	0.151000	13.8	discard	Exp 224: shortlist window +2 -> +1 — -93 wins, -0.3 avg_foundation
 a000762	0.149200	13.7	discard	Exp 225: shortlist window +2 -> +0 — -111 wins, -0.4 avg_foundation
+13d4c97	0.000000	0.0	crash	Exp 226: PREVIEW_CANDIDATES 10 -> 9 — orchestration interrupted before final metrics

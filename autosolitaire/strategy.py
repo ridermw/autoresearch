@@ -96,7 +96,7 @@ def _move_priority(gs: GameState, move: Move) -> tuple:
         return (5, -len(pile.face_down), len(pile.face_up))
 
     if t == MoveType.DRAW:
-        return (5,)
+        return (7,)
 
     if t == MoveType.TABLEAU_TO_TABLEAU:
         src = gs.tableau[move.from_col]
@@ -109,7 +109,7 @@ def _move_priority(gs: GameState, move: Move) -> tuple:
         return (10, -len(dst.face_down), -len(dst.face_up), -move.count)
 
     if t == MoveType.RESET_STOCK:
-        return (10,)
+        return (11,)
 
     return (99,)
 

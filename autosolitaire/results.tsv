@@ -96,14 +96,141 @@ c2ec003	0.160100	14.1	discard	Exp 96: late-game foundation boost (moves>200) —
 666b1d6	0.158200	14.0	discard	Exp 100: waste_future_score *1.5 — -21 wins, over-weighting waste hurts
 d2a9306	0.160300	14.1	discard	Exp 101: GREEDY_DEPTH 55->60 - neutral, same 1603 wins, slower 405.4s
 933ec03	0.159800	14.1	discard	Exp 102: foundation weight 22->21 - 1598 wins, same avg_foundation, slower 405.5s
+824dc67	0.160300	14.1	discard	Exp 103: GREEDY_DEPTH 55->54 - same wins, same avg_foundation, 125.2s slower
+2058e3b	0.000000	0.0	crash	Exp 103: PREVIEW_CANDIDATES 10 -> 11 — crash: see run.log
+1cc54d1	0.159600	14.1	discard	Exp 104: empty column bonus with king ready 4->3 - -7 wins, same avg_foundation
+b0ebfa8	0.160300	14.1	discard	Exp 104: PREVIEW_CANDIDATES 10 -> 12 — +0 wins, same avg_foundation, 594.7s
+7f4da17	0.159800	14.1	discard	Exp 105: waste future tableau base bonus 6->7 - -5 wins, same avg_foundation
+f262627	0.000000	0.0	crash	Exp 105: GREEDY_DEPTH 55 -> 58 — crash: see run.log
+9c638ff	0.159700	14.1	discard	Exp 106: waste tableau target bonus 5->4; waste future tableau base bonus 6->3 - -6 wins, same avg_foundation
+5a6d7ea	0.160200	14.1	discard	Exp 106: GREEDY_DEPTH 55 -> 52 — -1 wins, same avg_foundation, 438.1s
+05a6729	0.157900	14.0	discard	Exp 107: waste tableau target bonus 5->8; waste future tableau base bonus 6->4 - -24 wins, -0.1 avg_foundation
+aee213a	0.160300	14.1	discard	Exp 107: depth penalty 0.05 -> 0.04 — +0 wins, same avg_foundation, 442.8s
+8673cc4	0.159700	14.1	discard	Exp 108: empty column bonus without king ready 3->6; empty column bonus with king ready 4->5 - -6 wins, same avg_foundation
+c9e925d	0.160300	14.1	discard	Exp 108: depth penalty 0.05 -> 0.06 — +0 wins, same avg_foundation, 434.9s
+76d7f01	0.160300	14.1	discard	Exp 109: king-to-empty priority bucket 8->6 - same wins, same avg_foundation, 35.4s slower
+a2f8514	0.160000	14.1	discard	Exp 109: facedown weight 14.0 -> 14.5 — -3 wins, same avg_foundation, 423.4s
+4537ce0	0.159700	14.1	discard	Exp 110: GREEDY_DEPTH 55->50; WASTE_LOOKAHEAD 2->4 - -6 wins, same avg_foundation
+bcd06a2	TIMEOUT	TIMEOUT	discard	Exp 110: facedown weight 14.0 -> 13.5 — TIMEOUT after forced stop (>3600s)
+1dd3028	0.160300	14.1	discard	Exp 111: GREEDY_DEPTH 55->59 - same wins, same avg_foundation, 37.6s slower
+6b622f3	0.160200	14.1	discard	Exp 111: foundation weight 22.0 -> 22.5 — -1 wins, same avg_foundation, 499.9s
+980a6e3	0.159800	14.1	discard	Exp 112: waste immediate foundation bonus 10->16; waste future foundation bonus 10->8 - -5 wins, same avg_foundation
+7b9c916	0.160100	14.1	discard	Exp 112: foundation weight 22.0 -> 21.5 — -2 wins, same avg_foundation, 516.3s
+7bee458	0.160200	14.1	discard	Exp 113: GREEDY_DEPTH 55->49 - -1 wins, same avg_foundation
+703f413	0.159700	14.1	discard	Exp 113: stock_pass penalty 6.0 -> 7.0 — -6 wins, same avg_foundation, 464.4s
+3e9e960	0.159600	14.1	discard	Exp 114: waste tableau target bonus 5->6 - -7 wins, same avg_foundation
+7d2a69c	0.000000	0.0	crash	Exp 114: stock_pass penalty 6.0 -> 6.5 — crash: [5,000/10,000] win_rate=0.1558 avg_foundation=13.9 | [6,000/10,000] win_rate=0.1575 avg_foundation=14.0 | [7,000/10,000] win_rate=0.1591 avg_foundation=14.0
+77b2c61	0.160000	14.1	discard	Exp 115: waste immediate foundation bonus 10->8; waste future foundation bonus 10->16 - -3 wins, same avg_foundation
+8952304	0.160200	14.1	discard	Exp 115: waste foundation bonus 10.0 -> 8.0 — -1 wins, same avg_foundation, 403.0s
+fbbe898	0.140200	13.4	discard	Exp 116: safe foundation low-rank cutoff 1->4; foundation priority low-rank cutoff 5->8 - -201 wins, -0.7 avg_foundation
+3ae2299	0.160000	14.1	discard	Exp 116: waste foundation bonus 10.0 -> 12.0 — -3 wins, same avg_foundation, 407.9s
+fc542e6	0.159700	14.1	discard	Exp 117: empty column bonus without king ready 3->1; empty column bonus with king ready 4->6 - -6 wins, same avg_foundation
+982a011	0.160300	14.1	discard	Exp 117: waste tableau bonus 5.0 -> 4.0 — +0 wins, same avg_foundation, 408.8s
+fa27ebf	0.159800	14.1	discard	Exp 118: foundation weight 22->27; foundation imbalance penalty 2->0 - -5 wins, same avg_foundation
+7e64da1	0.000000	0.0	crash	Exp 118: waste tableau bonus 5.0 -> 6.0 — crash: [1,000/10,000] win_rate=0.1670 avg_foundation=14.5 | [2,000/10,000] win_rate=0.1545 avg_foundation=13.8
+b927cf3	0.160200	14.1	discard	Exp 119: waste immediate foundation bonus 10->9 - -1 wins, same avg_foundation
+2c60965	0.159900	14.1	discard	Exp 119: future foundation bonus 10.0 -> 12.0 — -4 wins, same avg_foundation, 469.1s
+aac2f9f	0.159900	14.1	discard	Exp 120: waste future foundation bonus 10->6 - -4 wins, same avg_foundation
+5396b6b	0.000000	0.0	crash	Exp 120: future foundation bonus 10.0 -> 8.0 — crash: interrupted after evaluation header
+01f7bc0	0.160300	14.1	discard	Exp 121: depth penalty 0.05->0.06; GREEDY_DEPTH 55->61 - same wins, same avg_foundation, 58.3s slower
+abad472	0.000000	0.0	crash	Exp 121: future tableau base 6.0 -> 7.0 — crash: interrupted after evaluation header
+754f1c2	0.158600	14.0	discard	Exp 122: waste tableau target bonus 5->6; waste future tableau base bonus 6->8 - -17 wins, -0.1 avg_foundation
+41f55ca	0.159700	14.1	discard	Exp 122: future tableau base 6.0 -> 5.0 — -6 wins, same avg_foundation, 420.2s
+132b610	0.000100	2.7	discard	Exp 123: DRAW priority bucket 7->5; RESET_STOCK priority bucket 11->10 - -1602 wins, -11.4 avg_foundation
+9b08910	0.160200	14.1	discard	Exp 123: future tableau target coeff 2.0 -> 2.5 — -1 wins, same avg_foundation, 502.5s
+881fc12	0.158400	14.0	discard	Exp 124: empty column bonus without king ready 3->1; empty column bonus with king ready 4->2 - -19 wins, -0.1 avg_foundation
+195eab2	0.159900	14.1	discard	Exp 124: future tableau target coeff 2.0 -> 1.5 — -4 wins, same avg_foundation, 520.6s
+52d5640	0.159900	14.1	discard	Exp 125: empty column bonus without king ready 3->7; empty column bonus with king ready 4->7 - -4 wins, same avg_foundation
+2d551c4	0.160100	14.1	discard	Exp 125: empty-column bonus without king 3.0 -> 4.0 — -2 wins, same avg_foundation, 507.7s
+c158f73	0.159900	14.1	discard	Exp 126: foundation weight 22->26 - -4 wins, same avg_foundation
+4b2e9a0	0.000000	0.0	crash	Exp 126: empty-column bonus with king ready 4.0 -> 5.0 — crash: [1,000/10,000] 0.1680/14.5 | [8,000/10,000] 0.1590/14.0
+854b07c	0.160200	14.1	discard	Exp 127: waste immediate foundation bonus 10->8 - -1 wins, same avg_foundation
+9ef0a7d	0.160300	14.1	discard	Exp 128: RESET_STOCK priority bucket 11->12 - same wins, same avg_foundation, 107.2s slower
+92f618e	0.158100	14.0	discard	Exp 129: waste tableau target bonus 5->8; waste future tableau base bonus 6->3 - -22 wins, -0.1 avg_foundation
+202f9f6	0.160000	14.1	discard	Exp 130: foundation weight 22->29; foundation imbalance penalty 2->5 - -3 wins, same avg_foundation
+761d51f	0.159300	14.0	discard	Exp 131: facedown weight 14->18; depth penalty 0.05->0.08 - -10 wins, -0.1 avg_foundation
+4e11fb9	0.160100	14.1	discard	Exp 132: waste future foundation bonus 10->16 - -2 wins, same avg_foundation
+b9845eb	0.158100	14.0	discard	Exp 133: empty column bonus without king ready 3->7; empty column bonus with king ready 4->2 - -22 wins, -0.1 avg_foundation
+40cfcd9	0.160300	14.1	discard	Exp 134: king-to-empty priority bucket 8->10; empty tableau priority bucket 10->11 - same wins, same avg_foundation, 6.2s slower
+31e2952	0.160300	14.1	discard	Exp 135: PREVIEW_CANDIDATES 10->12 - same wins, same avg_foundation, 31.8s slower
+bb961a8	0.160200	14.1	discard	Exp 136: GREEDY_DEPTH 55->48 - -1 wins, same avg_foundation
+c843790	0.160300	14.1	discard	Exp 137: king-to-empty priority bucket 8->7; empty tableau priority bucket 10->12 - same wins, same avg_foundation, 30.3s slower
+ffd476a	0.160200	14.1	discard	Exp 138: depth penalty 0.05->0.01; GREEDY_DEPTH 55->49 - -1 wins, same avg_foundation
+0f28c0e	0.160300	14.1	discard	Exp 139: GREEDY_DEPTH 55->53 - same wins, same avg_foundation, 66.8s slower
+4ba5e08	0.160200	14.1	discard	Exp 140: GREEDY_DEPTH 55->44; PREVIEW_CANDIDATES 10->14 - -1 wins, same avg_foundation
+2e81622	0.159300	14.0	discard	Exp 141: facedown weight 14->12; depth penalty 0.05->0.04 - -10 wins, -0.1 avg_foundation
+d3ff3a7	0.158600	14.0	discard	Exp 142: waste tableau target bonus 5->8; waste future tableau base bonus 6->8 - -17 wins, -0.1 avg_foundation
+793ccfc	0.160000	14.1	discard	Exp 143: waste immediate foundation bonus 10->14; waste future foundation bonus 10->8 - -3 wins, same avg_foundation
+2b7fa8c	0.160100	14.1	discard	Exp 144: waste tableau target bonus 5->3; waste future tableau base bonus 6->9 - -2 wins, same avg_foundation
+0693162	0.159500	14.1	discard	Exp 145: empty column bonus without king ready 3->2; empty column bonus with king ready 4->5 - -8 wins, same avg_foundation
+a92f788	0.146300	13.6	discard	Exp 146: auto-play threshold bucket 5->7; shortlist range 2->1 - -140 wins, -0.5 avg_foundation
+f8fe8aa	0.159700	14.1	discard	Exp 147: waste tableau target bonus 5->4; waste future tableau base bonus 6->9 - -6 wins, same avg_foundation
+a82aa41	0.155100	13.9	discard	Exp 148: DRAW priority bucket 7->6; RESET_STOCK priority bucket 11->13 - -52 wins, -0.2 avg_foundation
+d006094	0.143500	13.5	discard	Exp 149: safe foundation low-rank cutoff 1->4 - -168 wins, -0.6 avg_foundation
+d1ef910	0.159800	14.1	discard	Exp 150: empty column bonus without king ready 3->1; empty column bonus with king ready 4->3 - -5 wins, same avg_foundation
+9a70e99	0.160000	14.1	discard	Exp 151: foundation imbalance penalty 2->4 - -3 wins, same avg_foundation
+2b050ed	0.160300	14.1	discard	Exp 152: king-to-empty priority bucket 8->10; empty tableau priority bucket 10->12 - same wins, same avg_foundation
+d4fa423	0.159600	14.1	discard	Exp 153: empty column bonus without king ready 3->1; empty column bonus with king ready 4->5 - -7 wins, same avg_foundation
+0e9a431	0.160300	14.1	keep	Exp 153: no strategy change (baseline rerun) — +0 wins, +0.0 avg_foundation vs current winner
+0bf27b0	0.160100	14.1	discard	Exp 154: foundation weight 22 -> 21.5 — -2 wins, +0.0 avg_foundation
+f859a5d	0.160200	14.1	discard	Exp 155: foundation weight 22 -> 22.5 — -1 wins, +0.0 avg_foundation
+fe080b1	0.160000	14.1	discard	Exp 156: facedown weight 14 -> 13.5 — -3 wins, +0.0 avg_foundation
+9bc348e	0.160000	14.1	discard	Exp 157: facedown weight 14 -> 14.5 — -3 wins, +0.0 avg_foundation
+5d5ad3c	0.159800	14.1	discard	Exp 158: stock pass penalty 6 -> 5.5 — -5 wins, +0.0 avg_foundation
+f909fef	TIMEOUT	TIMEOUT	discard	Exp 159: stock pass penalty 6 -> 6.5 — TIMEOUT >600s
+910ef64	0.160200	14.1	discard	Exp 160: foundation balance penalty 2 -> 1.75 — -1 wins, +0.0 avg_foundation
+44d401f	0.160300	14.1	discard	Exp 161: foundation balance penalty 2 -> 2.25 — +0 wins, +0.0 avg_foundation
+40ac536	0.160300	14.1	discard	Exp 162: empty column bonus without king 3 -> 2 — +0 wins, +0.0 avg_foundation
+f7b8822	CRASH	CRASH	crash	Exp 163: empty column bonus without king 3 -> 4 — crash during evaluation
+ad1b7a6	0.159400	14.0	discard	Exp 164: empty column bonus with king ready 4 -> 5 — -9 wins, -0.1 avg_foundation
+bb93c2e	TIMEOUT	TIMEOUT	discard	Exp 165: empty column bonus with king ready 4 -> 3 — TIMEOUT >600s
+e6f633e	0.160300	14.1	discard	Exp 166: PREVIEW_CANDIDATES 10 -> 9 — +0 wins, +0.0 avg_foundation
+57a639f	0.160300	14.1	discard	Exp 167: PREVIEW_CANDIDATES 10 -> 11 — +0 wins, +0.0 avg_foundation
+2981202	0.160300	14.1	discard	Exp 168: PREVIEW_CANDIDATES 10 -> 12 — +0 wins, +0.0 avg_foundation
+c47ab10	0.160200	14.1	discard	Exp 169: GREEDY_DEPTH 55 -> 52 — -1 wins, +0.0 avg_foundation
+785178c	CRASH	CRASH	crash	Exp 170: GREEDY_DEPTH 55 -> 58 — crash during evaluation
+6869f4d	0.160300	14.1	discard	Exp 171: depth penalty 0.05 -> 0.04 — +0 wins, +0.0 avg_foundation
+5cec410	0.160300	14.1	discard	Exp 172: depth penalty 0.05 -> 0.06 — +0 wins, +0.0 avg_foundation
+08c70bc	0.160300	14.1	discard	Exp 173: depth penalty 0.05 -> 0.07 — +0 wins, +0.0 avg_foundation
+cff1272	CRASH	CRASH	crash	Exp 174: waste immediate foundation bonus 10 -> 9 — crash during evaluation
+175ee98	CRASH	CRASH	crash	Exp 175: PREVIEW_CANDIDATES 10 -> 11; depth penalty 0.05 -> 0.04 — crash during evaluation
+b6f7369	CRASH	CRASH	crash	Exp 176: PREVIEW_CANDIDATES 10 -> 11; depth penalty 0.05 -> 0.06 — crash during evaluation
+b8cbc3e	0.160300	14.1	discard	Exp 177: PREVIEW_CANDIDATES 10 -> 9; depth penalty 0.05 -> 0.06 — +0 wins, +0.0 avg_foundation
+f1992c2	TIMEOUT	TIMEOUT	discard	Exp 178: PREVIEW_CANDIDATES 10 -> 9; depth penalty 0.05 -> 0.07 — TIMEOUT >480s
+2b62cbd	TIMEOUT	TIMEOUT	discard	Exp 179: PREVIEW_CANDIDATES 10 -> 9; GREEDY_DEPTH 55 -> 52 — TIMEOUT >480s
+89bfbe8	TIMEOUT	TIMEOUT	discard	Exp 180: PREVIEW_CANDIDATES 10 -> 9; depth penalty 0.05 -> 0.06; GREEDY_DEPTH 55 -> 52 — TIMEOUT >480s
 1e8148c	0.160300	14.1	keep	Exp 203: baseline current winner (foundation 22.0, facedown 14.0, stock 6.0, current waste foundation 10.0, current waste tableau 5.0, future waste foundation 10.0, future waste tableau 6.0+2.0*targets, future weight 1.0 / (step + 1), empty king/no-king 4.0/3.0, balance 2.0, auto<=5, window +2, candidates 10, depth 55, depth penalty 0.05) — branch baseline
-cfc9f91	0.000000	0.0	crash	Exp 223: auto-play threshold <= 5 -> <= 4 — TIMEOUT >540s
-8ebf2c0	0.151000	13.8	discard	Exp 224: shortlist window +2 -> +1 — -93 wins, -0.3 avg_foundation
-a000762	0.149200	13.7	discard	Exp 225: shortlist window +2 -> +0 — -111 wins, -0.4 avg_foundation
-13d4c97	0.000000	0.0	crash	Exp 226: PREVIEW_CANDIDATES 10 -> 9 — orchestration interrupted before final metrics
 abf0990	0.000000	0.0	crash	Exp 204: GREEDY_DEPTH 60->65 — timeout >300s
 f2c45f3	0.171100	15.4	keep	Exp 205: GREEDY_DEPTH 60->70 — +3 wins, same avg_foundation
 e4a1aba	0.000000	0.0	crash	Exp 206: depth penalty 0.05->0.06 — timeout >300s
 14718bd	0.171200	15.4	keep	Exp 207: depth penalty 0.05->0.07 — +1 wins, same avg_foundation
 457b9b0	0.169600	15.3	discard	Exp 208: foundation weight 22->21 — -16 wins, -0.1 avg_foundation
 06cb56c	0.000000	0.0	crash	Exp 209: foundation weight 22->23 — orchestration interrupted before evaluation completed
+cfc9f91	0.000000	0.0	crash	Exp 223: auto-play threshold <= 5 -> <= 4 — TIMEOUT >540s
+8ebf2c0	0.151000	13.8	discard	Exp 224: shortlist window +2 -> +1 — -93 wins, -0.3 avg_foundation
+a000762	0.149200	13.7	discard	Exp 225: shortlist window +2 -> +0 — -111 wins, -0.4 avg_foundation
+13d4c97	0.000000	0.0	crash	Exp 226: PREVIEW_CANDIDATES 10 -> 9 — orchestration interrupted before final metrics
+b16108e	0.170400	15.3	keep	Exp 253: auto-play threshold best_pri<=5-><=4 - +101 wins, +1.2 avg_foundation
+3d83025	0.000000	0.0	crash	Exp 254: auto-play threshold bucket 4->3 - timeout >300s
+9859d67	0.161000	15.0	discard	Exp 255: shortlist range 2->1 - -94 wins, -0.3 avg_foundation
+0fae964	0.000000	0.0	crash	Exp 256: shortlist range 2->3 - timeout >300s
+349c692	0.170400	15.3	discard	Exp 257: PREVIEW_CANDIDATES 10->12 - same wins, same avg_foundation
+4b81d35	0.170200	15.3	discard	Exp 258: PREVIEW_CANDIDATES 10->8 - -2 wins, same avg_foundation
+210f697	0.170800	15.4	keep	Exp 259: GREEDY_DEPTH 55->60 - +4 wins, +0.1 avg_foundation
+c329cdf	0.168700	15.3	discard	Exp 260: GREEDY_DEPTH 60->50 - -21 wins, -0.1 avg_foundation
+5765d7d	0.160300	14.8	discard	Exp 261: WASTE_LOOKAHEAD 2->1 - -105 wins, -0.6 avg_foundation
+fc9f0ad	0.000000	0.0	crash	Exp 262: WASTE_LOOKAHEAD 2->3 - timeout >300s
+49aa508	0.000000	0.0	crash	Exp 263: depth penalty 0.05->0.04 - timeout >300s
+3bd9571	0.000000	0.0	crash	Exp 264: auto-play threshold bucket 4->3; shortlist range 2->1 - timeout >300s
+db3adbc	0.000000	0.0	crash	Exp 265: auto-play threshold bucket 4->3; shortlist range 2->3 - timeout >300s
+01f3a36	0.000000	0.0	crash	Exp 266: auto-play threshold bucket 4->3; PREVIEW_CANDIDATES 10->12 - missing final metrics (BrokenPipeError)
+4a5cf4e	0.000000	0.0	crash	Exp 267: auto-play threshold bucket 4->3; WASTE_LOOKAHEAD 2->1 - timeout >300s
+930cd82	0.170800	15.4	discard	Exp 268: PREVIEW_CANDIDATES 10->11 - same wins, same avg_foundation
+d528397	0.171100	15.4	keep	Exp 269: GREEDY_DEPTH 60->65 - +3 wins, same avg_foundation
+d79ebd2	0.171100	15.4	discard	Exp 270: GREEDY_DEPTH 65->70 - same wins, same avg_foundation
+7d6b58c	0.171000	15.4	discard	Exp 271: depth penalty 0.05->0.06 - -1 wins, same avg_foundation
+a537ba1	0.000000	0.0	crash	Exp 272: depth penalty 0.05->0.07 - timeout >300s
+b4a0938	0.169700	15.3	discard	Exp 273: foundation weight 22->21 - -14 wins, -0.1 avg_foundation
+e8dbfb8	0.171100	15.4	discard	Exp 274: foundation weight 22->23 - same wins, same avg_foundation
+e52ac31	0.169000	15.3	discard	Exp 275: facedown weight 14->13 - -21 wins, -0.1 avg_foundation
+ec4c91e	0.000000	0.0	crash	Exp 210: facedown weight 14->13 — timeout >300s

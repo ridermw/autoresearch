@@ -113,3 +113,4 @@ db3adbc	0.000000	0.0	crash	Exp 265: auto-play threshold bucket 4->3; shortlist r
 4a5cf4e	0.000000	0.0	crash	Exp 267: auto-play threshold bucket 4->3; WASTE_LOOKAHEAD 2->1 - timeout >300s
 930cd82	0.170800	15.4	discard	Exp 268: PREVIEW_CANDIDATES 10->11 - same wins, same avg_foundation
 d528397	0.171100	15.4	keep	Exp 269: GREEDY_DEPTH 60->65 - +3 wins, same avg_foundation
+d79ebd2	0.171100	15.4	discard	Exp 270: GREEDY_DEPTH 65->70 - same wins, same avg_foundation

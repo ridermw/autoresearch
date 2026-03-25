@@ -100,3 +100,4 @@ b16108e	0.170400	15.3	keep	Exp 253: auto-play threshold best_pri<=5-><=4 - +101 
 3d83025	0.000000	0.0	crash	Exp 254: auto-play threshold bucket 4->3 - timeout >300s
 9859d67	0.161000	15.0	discard	Exp 255: shortlist range 2->1 - -94 wins, -0.3 avg_foundation
 0fae964	0.000000	0.0	crash	Exp 256: shortlist range 2->3 - timeout >300s
+349c692	0.170400	15.3	discard	Exp 257: PREVIEW_CANDIDATES 10->12 - same wins, same avg_foundation

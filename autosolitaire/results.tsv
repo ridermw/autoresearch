@@ -128,3 +128,4 @@ c158f73	0.159900	14.1	discard	Exp 126: foundation weight 22->26 - -4 wins, same 
 4e11fb9	0.160100	14.1	discard	Exp 132: waste future foundation bonus 10->16 - -2 wins, same avg_foundation
 b9845eb	0.158100	14.0	discard	Exp 133: empty column bonus without king ready 3->7; empty column bonus with king ready 4->2 - -22 wins, -0.1 avg_foundation
 40cfcd9	0.160300	14.1	discard	Exp 134: king-to-empty priority bucket 8->10; empty tableau priority bucket 10->11 - same wins, same avg_foundation, 6.2s slower
+31e2952	0.160300	14.1	discard	Exp 135: PREVIEW_CANDIDATES 10->12 - same wins, same avg_foundation, 31.8s slower

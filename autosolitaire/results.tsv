@@ -144,3 +144,4 @@ f8fe8aa	0.159700	14.1	discard	Exp 147: waste tableau target bonus 5->4; waste fu
 a82aa41	0.155100	13.9	discard	Exp 148: DRAW priority bucket 7->6; RESET_STOCK priority bucket 11->13 - -52 wins, -0.2 avg_foundation
 d006094	0.143500	13.5	discard	Exp 149: safe foundation low-rank cutoff 1->4 - -168 wins, -0.6 avg_foundation
 d1ef910	0.159800	14.1	discard	Exp 150: empty column bonus without king ready 3->1; empty column bonus with king ready 4->3 - -5 wins, same avg_foundation
+9a70e99	0.160000	14.1	discard	Exp 151: foundation imbalance penalty 2->4 - -3 wins, same avg_foundation

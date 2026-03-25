@@ -182,7 +182,7 @@ def _state_score(gs: GameState) -> float:
         score += empty_cols * (4.0 if _king_ready(gs) else 3.0)
     # Penalize uneven foundation distribution
     f_lens = [len(f) for f in gs.foundations]
-    score -= (max(f_lens) - min(f_lens)) * 4.0
+    score -= (max(f_lens) - min(f_lens)) * 2.0
     return score
 
 

@@ -146,3 +146,4 @@ d006094	0.143500	13.5	discard	Exp 149: safe foundation low-rank cutoff 1->4 - -1
 d1ef910	0.159800	14.1	discard	Exp 150: empty column bonus without king ready 3->1; empty column bonus with king ready 4->3 - -5 wins, same avg_foundation
 9a70e99	0.160000	14.1	discard	Exp 151: foundation imbalance penalty 2->4 - -3 wins, same avg_foundation
 2b050ed	0.160300	14.1	discard	Exp 152: king-to-empty priority bucket 8->10; empty tableau priority bucket 10->12 - same wins, same avg_foundation
+d4fa423	0.159600	14.1	discard	Exp 153: empty column bonus without king ready 3->1; empty column bonus with king ready 4->5 - -7 wins, same avg_foundation

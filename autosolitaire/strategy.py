@@ -179,7 +179,7 @@ def _state_score(gs: GameState) -> float:
         score += 5.0 * tableau_targets
     score += _waste_future_score(gs)
     if empty_cols:
-        score += empty_cols * (4.0 if _king_ready(gs) else 3.0)
+        score += empty_cols * (2.0 if _king_ready(gs) else 1.0)
     # Penalize uneven foundation distribution
     f_lens = [len(f) for f in gs.foundations]
     score -= (max(f_lens) - min(f_lens)) * 2.0

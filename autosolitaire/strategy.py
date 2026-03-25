@@ -186,7 +186,7 @@ def _state_score(gs: GameState) -> float:
     return score
 
 
-GREEDY_DEPTH = 55
+GREEDY_DEPTH = 49
 
 
 def _preview_score(gs: GameState) -> float:
@@ -207,7 +207,7 @@ def _preview_score(gs: GameState) -> float:
         if key in seen:
             break
         seen.add(key)
-        score = _state_score(state) - step * 0.05
+        score = _state_score(state) - step * 0.01
         if score > best_score:
             best_score = score
 

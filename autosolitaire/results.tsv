@@ -115,3 +115,4 @@ db3adbc	0.000000	0.0	crash	Exp 265: auto-play threshold bucket 4->3; shortlist r
 d528397	0.171100	15.4	keep	Exp 269: GREEDY_DEPTH 60->65 - +3 wins, same avg_foundation
 d79ebd2	0.171100	15.4	discard	Exp 270: GREEDY_DEPTH 65->70 - same wins, same avg_foundation
 7d6b58c	0.171000	15.4	discard	Exp 271: depth penalty 0.05->0.06 - -1 wins, same avg_foundation
+a537ba1	0.000000	0.0	crash	Exp 272: depth penalty 0.05->0.07 - timeout >300s

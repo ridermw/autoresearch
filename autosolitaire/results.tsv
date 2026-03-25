@@ -109,3 +109,4 @@ fc9f0ad	0.000000	0.0	crash	Exp 262: WASTE_LOOKAHEAD 2->3 - timeout >300s
 49aa508	0.000000	0.0	crash	Exp 263: depth penalty 0.05->0.04 - timeout >300s
 3bd9571	0.000000	0.0	crash	Exp 264: auto-play threshold bucket 4->3; shortlist range 2->1 - timeout >300s
 db3adbc	0.000000	0.0	crash	Exp 265: auto-play threshold bucket 4->3; shortlist range 2->3 - timeout >300s
+01f3a36	0.000000	0.0	crash	Exp 266: auto-play threshold bucket 4->3; PREVIEW_CANDIDATES 10->12 - missing final metrics (BrokenPipeError)

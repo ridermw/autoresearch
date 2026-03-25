@@ -96,3 +96,4 @@ c2ec003	0.160100	14.1	discard	Exp 96: late-game foundation boost (moves>200) —
 666b1d6	0.158200	14.0	discard	Exp 100: waste_future_score *1.5 — -21 wins, over-weighting waste hurts
 d2a9306	0.160300	14.1	discard	Exp 101: GREEDY_DEPTH 55->60 - neutral, same 1603 wins, slower 405.4s
 933ec03	0.159800	14.1	discard	Exp 102: foundation weight 22->21 - 1598 wins, same avg_foundation, slower 405.5s
+1e8148c	0.160300	14.1	keep	Exp 203: baseline current winner (foundation 22.0, facedown 14.0, stock 6.0, current waste foundation 10.0, current waste tableau 5.0, future waste foundation 10.0, future waste tableau 6.0+2.0*targets, future weight 1.0 / (step + 1), empty king/no-king 4.0/3.0, balance 2.0, auto<=5, window +2, candidates 10, depth 55, depth penalty 0.05) — branch baseline

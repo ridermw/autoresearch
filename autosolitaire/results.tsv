@@ -140,3 +140,4 @@ d3ff3a7	0.158600	14.0	discard	Exp 142: waste tableau target bonus 5->8; waste fu
 2b7fa8c	0.160100	14.1	discard	Exp 144: waste tableau target bonus 5->3; waste future tableau base bonus 6->9 - -2 wins, same avg_foundation
 0693162	0.159500	14.1	discard	Exp 145: empty column bonus without king ready 3->2; empty column bonus with king ready 4->5 - -8 wins, same avg_foundation
 a92f788	0.146300	13.6	discard	Exp 146: auto-play threshold bucket 5->7; shortlist range 2->1 - -140 wins, -0.5 avg_foundation
+f8fe8aa	0.159700	14.1	discard	Exp 147: waste tableau target bonus 5->4; waste future tableau base bonus 6->9 - -6 wins, same avg_foundation

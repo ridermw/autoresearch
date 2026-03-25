@@ -102,3 +102,4 @@ b16108e	0.170400	15.3	keep	Exp 253: auto-play threshold best_pri<=5-><=4 - +101 
 0fae964	0.000000	0.0	crash	Exp 256: shortlist range 2->3 - timeout >300s
 349c692	0.170400	15.3	discard	Exp 257: PREVIEW_CANDIDATES 10->12 - same wins, same avg_foundation
 4b81d35	0.170200	15.3	discard	Exp 258: PREVIEW_CANDIDATES 10->8 - -2 wins, same avg_foundation
+210f697	0.170800	15.4	keep	Exp 259: GREEDY_DEPTH 55->60 - +4 wins, +0.1 avg_foundation

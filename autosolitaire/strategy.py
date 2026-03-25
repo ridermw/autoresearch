@@ -25,7 +25,7 @@ PREVIEW_DEPTH = 7
 PREVIEW_CANDIDATES = 10
 BEAM_WIDTH = 1
 BEAM_EXPANSION = 3
-WASTE_LOOKAHEAD = 2
+WASTE_LOOKAHEAD = 3
 
 
 def _is_safe_to_foundation(gs: GameState, card) -> bool:

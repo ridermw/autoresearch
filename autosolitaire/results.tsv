@@ -99,3 +99,4 @@ d2a9306	0.160300	14.1	discard	Exp 101: GREEDY_DEPTH 55->60 - neutral, same 1603 
 1e8148c	0.160300	14.1	keep	Exp 203: baseline current winner (foundation 22.0, facedown 14.0, stock 6.0, current waste foundation 10.0, current waste tableau 5.0, future waste foundation 10.0, future waste tableau 6.0+2.0*targets, future weight 1.0 / (step + 1), empty king/no-king 4.0/3.0, balance 2.0, auto<=5, window +2, candidates 10, depth 55, depth penalty 0.05) — branch baseline
 cfc9f91	0.000000	0.0	crash	Exp 223: auto-play threshold <= 5 -> <= 4 — TIMEOUT >540s
 8ebf2c0	0.151000	13.8	discard	Exp 224: shortlist window +2 -> +1 — -93 wins, -0.3 avg_foundation
+a000762	0.149200	13.7	discard	Exp 225: shortlist window +2 -> +0 — -111 wins, -0.4 avg_foundation

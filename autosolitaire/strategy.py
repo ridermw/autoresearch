@@ -22,7 +22,7 @@ from prepare import (
 )
 
 PREVIEW_DEPTH = 7
-PREVIEW_CANDIDATES = 10
+PREVIEW_CANDIDATES = 14
 BEAM_WIDTH = 1
 BEAM_EXPANSION = 3
 WASTE_LOOKAHEAD = 2
@@ -186,7 +186,7 @@ def _state_score(gs: GameState) -> float:
     return score
 
 
-GREEDY_DEPTH = 55
+GREEDY_DEPTH = 44
 
 
 def _preview_score(gs: GameState) -> float:

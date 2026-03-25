@@ -122,3 +122,4 @@ aac2f9f	0.159900	14.1	discard	Exp 120: waste future foundation bonus 10->6 - -4 
 c158f73	0.159900	14.1	discard	Exp 126: foundation weight 22->26 - -4 wins, same avg_foundation
 854b07c	0.160200	14.1	discard	Exp 127: waste immediate foundation bonus 10->8 - -1 wins, same avg_foundation
 9ef0a7d	0.160300	14.1	discard	Exp 128: RESET_STOCK priority bucket 11->12 - same wins, same avg_foundation, 107.2s slower
+92f618e	0.158100	14.0	discard	Exp 129: waste tableau target bonus 5->8; waste future tableau base bonus 6->3 - -22 wins, -0.1 avg_foundation

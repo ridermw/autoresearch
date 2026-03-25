@@ -121,3 +121,4 @@ aac2f9f	0.159900	14.1	discard	Exp 120: waste future foundation bonus 10->6 - -4 
 52d5640	0.159900	14.1	discard	Exp 125: empty column bonus without king ready 3->7; empty column bonus with king ready 4->7 - -4 wins, same avg_foundation
 c158f73	0.159900	14.1	discard	Exp 126: foundation weight 22->26 - -4 wins, same avg_foundation
 854b07c	0.160200	14.1	discard	Exp 127: waste immediate foundation bonus 10->8 - -1 wins, same avg_foundation
+9ef0a7d	0.160300	14.1	discard	Exp 128: RESET_STOCK priority bucket 11->12 - same wins, same avg_foundation, 107.2s slower

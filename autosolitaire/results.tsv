@@ -107,3 +107,4 @@ c329cdf	0.168700	15.3	discard	Exp 260: GREEDY_DEPTH 60->50 - -21 wins, -0.1 avg_
 5765d7d	0.160300	14.8	discard	Exp 261: WASTE_LOOKAHEAD 2->1 - -105 wins, -0.6 avg_foundation
 fc9f0ad	0.000000	0.0	crash	Exp 262: WASTE_LOOKAHEAD 2->3 - timeout >300s
 49aa508	0.000000	0.0	crash	Exp 263: depth penalty 0.05->0.04 - timeout >300s
+3bd9571	0.000000	0.0	crash	Exp 264: auto-play threshold bucket 4->3; shortlist range 2->1 - timeout >300s

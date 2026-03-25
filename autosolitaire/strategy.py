@@ -109,7 +109,7 @@ def _move_priority(gs: GameState, move: Move) -> tuple:
         return (10, -len(dst.face_down), -len(dst.face_up), -move.count)
 
     if t == MoveType.RESET_STOCK:
-        return (11,)
+        return (12,)
 
     return (99,)
 

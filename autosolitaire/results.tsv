@@ -145,6 +145,7 @@ abad472	0.000000	0.0	crash	Exp 121: future tableau base 6.0 -> 7.0 — crash: in
 c158f73	0.159900	14.1	discard	Exp 126: foundation weight 22->26 - -4 wins, same avg_foundation
 4b2e9a0	0.000000	0.0	crash	Exp 126: empty-column bonus with king ready 4.0 -> 5.0 — crash: [1,000/10,000] 0.1680/14.5 | [8,000/10,000] 0.1590/14.0
 854b07c	0.160200	14.1	discard	Exp 127: waste immediate foundation bonus 10->8 - -1 wins, same avg_foundation
+9afcc18	0.000000	0.0	crash	Exp 127: foundation balance penalty 2.0 -> 2.5 — crash: [1,000/10,000] 0.1680/14.5 | [3,000/10,000] 0.1503/13.7
 9ef0a7d	0.160300	14.1	discard	Exp 128: RESET_STOCK priority bucket 11->12 - same wins, same avg_foundation, 107.2s slower
 92f618e	0.158100	14.0	discard	Exp 129: waste tableau target bonus 5->8; waste future tableau base bonus 6->3 - -22 wins, -0.1 avg_foundation
 202f9f6	0.160000	14.1	discard	Exp 130: foundation weight 22->29; foundation imbalance penalty 2->5 - -3 wins, same avg_foundation
@@ -199,6 +200,7 @@ b8cbc3e	0.160300	14.1	discard	Exp 177: PREVIEW_CANDIDATES 10 -> 9; depth penalty
 f1992c2	TIMEOUT	TIMEOUT	discard	Exp 178: PREVIEW_CANDIDATES 10 -> 9; depth penalty 0.05 -> 0.07 — TIMEOUT >480s
 2b62cbd	TIMEOUT	TIMEOUT	discard	Exp 179: PREVIEW_CANDIDATES 10 -> 9; GREEDY_DEPTH 55 -> 52 — TIMEOUT >480s
 89bfbe8	TIMEOUT	TIMEOUT	discard	Exp 180: PREVIEW_CANDIDATES 10 -> 9; depth penalty 0.05 -> 0.06; GREEDY_DEPTH 55 -> 52 — TIMEOUT >480s
+09f6773	TIMEOUT	TIMEOUT	discard	Exp 181: foundation balance penalty 2 -> 2.25; PREVIEW_CANDIDATES 10 -> 9 — TIMEOUT >480s
 1e8148c	0.160300	14.1	keep	Exp 203: baseline current winner (foundation 22.0, facedown 14.0, stock 6.0, current waste foundation 10.0, current waste tableau 5.0, future waste foundation 10.0, future waste tableau 6.0+2.0*targets, future weight 1.0 / (step + 1), empty king/no-king 4.0/3.0, balance 2.0, auto<=5, window +2, candidates 10, depth 55, depth penalty 0.05) — branch baseline
 abf0990	0.000000	0.0	crash	Exp 204: GREEDY_DEPTH 60->65 — timeout >300s
 f2c45f3	0.171100	15.4	keep	Exp 205: GREEDY_DEPTH 60->70 — +3 wins, same avg_foundation
@@ -206,6 +208,7 @@ e4a1aba	0.000000	0.0	crash	Exp 206: depth penalty 0.05->0.06 — timeout >300s
 14718bd	0.171200	15.4	keep	Exp 207: depth penalty 0.05->0.07 — +1 wins, same avg_foundation
 457b9b0	0.169600	15.3	discard	Exp 208: foundation weight 22->21 — -16 wins, -0.1 avg_foundation
 06cb56c	0.000000	0.0	crash	Exp 209: foundation weight 22->23 — orchestration interrupted before evaluation completed
+ec4c91e	0.000000	0.0	crash	Exp 210: facedown weight 14->13 — timeout >300s
 cfc9f91	0.000000	0.0	crash	Exp 223: auto-play threshold <= 5 -> <= 4 — TIMEOUT >540s
 8ebf2c0	0.151000	13.8	discard	Exp 224: shortlist window +2 -> +1 — -93 wins, -0.3 avg_foundation
 a000762	0.149200	13.7	discard	Exp 225: shortlist window +2 -> +0 — -111 wins, -0.4 avg_foundation
@@ -233,4 +236,4 @@ a537ba1	0.000000	0.0	crash	Exp 272: depth penalty 0.05->0.07 - timeout >300s
 b4a0938	0.169700	15.3	discard	Exp 273: foundation weight 22->21 - -14 wins, -0.1 avg_foundation
 e8dbfb8	0.171100	15.4	discard	Exp 274: foundation weight 22->23 - same wins, same avg_foundation
 e52ac31	0.169000	15.3	discard	Exp 275: facedown weight 14->13 - -21 wins, -0.1 avg_foundation
-ec4c91e	0.000000	0.0	crash	Exp 210: facedown weight 14->13 — timeout >300s
+89a41c1	0.000000	0.0	crash	Exp 276: facedown weight 14->15 - missing final metrics (BrokenPipeError)

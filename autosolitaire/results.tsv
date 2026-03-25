@@ -117,3 +117,4 @@ d79ebd2	0.171100	15.4	discard	Exp 270: GREEDY_DEPTH 65->70 - same wins, same avg
 7d6b58c	0.171000	15.4	discard	Exp 271: depth penalty 0.05->0.06 - -1 wins, same avg_foundation
 a537ba1	0.000000	0.0	crash	Exp 272: depth penalty 0.05->0.07 - timeout >300s
 b4a0938	0.169700	15.3	discard	Exp 273: foundation weight 22->21 - -14 wins, -0.1 avg_foundation
+e8dbfb8	0.171100	15.4	discard	Exp 274: foundation weight 22->23 - same wins, same avg_foundation

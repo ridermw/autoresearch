@@ -120,3 +120,4 @@ b4a0938	0.169700	15.3	discard	Exp 273: foundation weight 22->21 - -14 wins, -0.1
 e8dbfb8	0.171100	15.4	discard	Exp 274: foundation weight 22->23 - same wins, same avg_foundation
 e52ac31	0.169000	15.3	discard	Exp 275: facedown weight 14->13 - -21 wins, -0.1 avg_foundation
 89a41c1	0.000000	0.0	crash	Exp 276: facedown weight 14->15 - missing final metrics (BrokenPipeError)
+9996347	0.169100	15.3	discard	Exp 277: stock pass penalty 6->5 - -20 wins, -0.1 avg_foundation

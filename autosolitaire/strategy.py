@@ -227,7 +227,7 @@ def choose_move(gs: GameState, legal_moves: list[Move]) -> Move:
 
     best_bucket = best_pri[0]
     shortlist = [
-        move for move, pri in priorities if pri[0] <= best_bucket + 2
+        move for move, pri in priorities if pri[0] <= best_bucket + 1
     ][:PREVIEW_CANDIDATES]
     for move_type in (MoveType.DRAW, MoveType.RESET_STOCK):
         special = next((move for move, _ in priorities if move.type == move_type), None)

@@ -134,3 +134,4 @@ c843790	0.160300	14.1	discard	Exp 137: king-to-empty priority bucket 8->7; empty
 ffd476a	0.160200	14.1	discard	Exp 138: depth penalty 0.05->0.01; GREEDY_DEPTH 55->49 - -1 wins, same avg_foundation
 0f28c0e	0.160300	14.1	discard	Exp 139: GREEDY_DEPTH 55->53 - same wins, same avg_foundation, 66.8s slower
 4ba5e08	0.160200	14.1	discard	Exp 140: GREEDY_DEPTH 55->44; PREVIEW_CANDIDATES 10->14 - -1 wins, same avg_foundation
+2e81622	0.159300	14.0	discard	Exp 141: facedown weight 14->12; depth penalty 0.05->0.04 - -10 wins, -0.1 avg_foundation

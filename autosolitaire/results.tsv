@@ -99,3 +99,4 @@ d2a9306	0.160300	14.1	discard	Exp 101: GREEDY_DEPTH 55->60 - neutral, same 1603 
 b16108e	0.170400	15.3	keep	Exp 253: auto-play threshold best_pri<=5-><=4 - +101 wins, +1.2 avg_foundation
 3d83025	0.000000	0.0	crash	Exp 254: auto-play threshold bucket 4->3 - timeout >300s
 9859d67	0.161000	15.0	discard	Exp 255: shortlist range 2->1 - -94 wins, -0.3 avg_foundation
+0fae964	0.000000	0.0	crash	Exp 256: shortlist range 2->3 - timeout >300s

@@ -170,7 +170,7 @@ def _state_score(gs: GameState) -> float:
     foundation = gs.total_foundation_cards()
     facedown = sum(len(pile.face_down) for pile in gs.tableau)
     empty_cols = sum(1 for pile in gs.tableau if pile.is_empty())
-    score = foundation * 22.0 - facedown * 14.0 - gs.stock_passes * 6.0
+    score = foundation * 26.0 - facedown * 14.0 - gs.stock_passes * 6.0
     if gs.waste:
         waste_card = gs.waste[-1]
         if foundation_accepts(gs, waste_card):

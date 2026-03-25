@@ -117,3 +117,4 @@ aac2f9f	0.159900	14.1	discard	Exp 120: waste future foundation bonus 10->6 - -4 
 01f7bc0	0.160300	14.1	discard	Exp 121: depth penalty 0.05->0.06; GREEDY_DEPTH 55->61 - same wins, same avg_foundation, 58.3s slower
 754f1c2	0.158600	14.0	discard	Exp 122: waste tableau target bonus 5->6; waste future tableau base bonus 6->8 - -17 wins, -0.1 avg_foundation
 132b610	0.000100	2.7	discard	Exp 123: DRAW priority bucket 7->5; RESET_STOCK priority bucket 11->10 - -1602 wins, -11.4 avg_foundation
+881fc12	0.158400	14.0	discard	Exp 124: empty column bonus without king ready 3->1; empty column bonus with king ready 4->2 - -19 wins, -0.1 avg_foundation
